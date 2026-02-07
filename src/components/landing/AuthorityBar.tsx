@@ -4,18 +4,18 @@ const AuthorityBar = () => {
   const credentials = [
     {
       icon: Star,
-      title: "Testimonios reales",
-      description: "Familias satisfechas que compraron con claridad",
+      title: "Real Testimonials",
+      description: "Satisfied families who bought with clarity",
     },
     {
       icon: Users,
-      title: "Experiencia comprobada",
-      description: "Años guiando procesos de compra en USA",
+      title: "Proven Experience",
+      description: "Years guiding home buying processes in the USA",
     },
     {
       icon: Shield,
-      title: "Método estructurado",
-      description: "Sin improvisaciones ni sorpresas",
+      title: "Structured Method",
+      description: "No improvisation or surprises",
     },
   ];
 
