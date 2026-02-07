@@ -2,6 +2,7 @@ import Hero from "@/components/landing/Hero";
 import AuthorityBar from "@/components/landing/AuthorityBar";
 import Benefits from "@/components/landing/Benefits";
 import CTASection from "@/components/landing/CTASection";
+import VideoShowcase from "@/components/landing/VideoShowcase";
 import Testimonials from "@/components/landing/Testimonials";
 import FAQ from "@/components/landing/FAQ";
 import HowItWorks from "@/components/landing/HowItWorks";
@@ -22,7 +23,10 @@ const Index = () => {
       {/* 4. CTA Intermedio */}
       <CTASection variant="primary" />
 
-      {/* 5. Testimonials */}
+      {/* 5. Video Showcase */}
+      <VideoShowcase />
+
+      {/* 6. Testimonials */}
       <Testimonials />
 
       {/* 6. FAQ */}
