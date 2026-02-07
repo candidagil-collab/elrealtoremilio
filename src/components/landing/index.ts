@@ -2,6 +2,7 @@ export { default as Hero } from "./Hero";
 export { default as AuthorityBar } from "./AuthorityBar";
 export { default as Benefits } from "./Benefits";
 export { default as CTASection } from "./CTASection";
+export { default as NewsletterSignup } from "./NewsletterSignup";
 export { default as VideoShowcase } from "./VideoShowcase";
 export { default as Testimonials } from "./Testimonials";
 export { default as FAQ } from "./FAQ";
