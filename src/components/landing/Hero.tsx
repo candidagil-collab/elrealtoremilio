@@ -9,7 +9,7 @@ import propertyMichaelLn from "@/assets/property-michael-ln.png";
 const properties = [{
   id: 1,
   image: propertyElgin,
-  title: "Elgin Property",
+  title: "116 Pine Point Cv",
   description: "Beautiful stone and wood home with 10k Flex Cash incentive. Features elegant craftsmanship, spacious garage, and a lush green yard in a peaceful setting.",
   bedrooms: 3,
   bathrooms: "2"
