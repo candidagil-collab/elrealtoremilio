@@ -18,7 +18,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Playfair Display", "serif"],
+        display: ["Lato", "sans-serif"],
         body: ["Lato", "sans-serif"],
       },
       colors: {
