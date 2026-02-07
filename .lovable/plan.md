@@ -1,87 +1,63 @@
 
+# Plan: Carrusel de Propiedades Destacadas con Auto-slide
 
-# 🏠 Landing Page de Alta Conversión - Emilio Sanchez Real Estate
+## Resumen
+Convertir la sección de propiedades destacadas en un carrusel interactivo que se deslice automáticamente hacia la izquierda, utilizando el componente Carousel existente con el plugin de autoplay de Embla.
 
-## Resumen del Proyecto
-Landing page profesional en español, optimizada para conversión, dirigida a familias clase media-alta que buscan comprar su primera casa en Estados Unidos. Diseño mobile-first con enfoque en claridad, confianza y llamadas a la acción estratégicas.
+## Cambios a Realizar
 
----
+### 1. Instalar plugin de autoplay
+Agregar el paquete `embla-carousel-autoplay` para habilitar el deslizamiento automatico.
 
-## 🎨 Sistema de Diseño (Basado en Manual de Marca)
+### 2. Modificar Hero.tsx
+- Importar los componentes del carrusel (`Carousel`, `CarouselContent`, `CarouselItem`)
+- Importar el plugin `Autoplay` de embla-carousel-autoplay
+- Reemplazar el contenedor `flex` actual por el componente `Carousel`
+- Configurar el autoplay con:
+  - Delay de 4 segundos entre slides
+  - Loop infinito para que el carrusel continue ciclicamente
+  - Pausar al interactuar con el mouse
 
-**Colores:**
-- Primario: Azul institucional #0B2F6B
-- Texto principal: #333333
-- Texto secundario: #6B7280
-- Fondos: Blanco #FFFFFF y Gris claro #F8F9FB
+### 3. Configuracion del Carrusel
+```text
+Carousel
+  opts:
+    - align: "start" (alinear slides al inicio)
+    - loop: true (ciclo infinito)
+  plugins:
+    - Autoplay con delay de 4000ms
+```
 
-**Tipografía:**
-- Títulos: Playfair Display (semibold/medium)
-- Cuerpo y botones: Lato
-
----
-
-## 📱 Estructura de la Landing (8 secciones)
-
-### 1. Hero Section
-- **Logo** Emilio Sanchez Real Estate (versión azul o blanca según fondo)
-- **Headline H1:** "Compra tu primera casa con total claridad, sin cometer errores costosos"
-- **Subheadline:** Descripción del acompañamiento paso a paso
-- **CTA Principal:** "Agenda una llamada y entiende tu proceso de compra"
-- **Microcopy de confianza:** ✔ Sin compromiso · ✔ 100% confidencial · ✔ Claridad desde la primera llamada
-- **Visual:** Placeholder profesional (imagen de consultoría con clientes)
-
-### 2. Barra de Autoridad
-- Strip horizontal con 3 credenciales clave
-- Testimonios reales, experiencia guiando procesos, método sin improvisaciones
-
-### 3. Sección de Beneficios
-Tres cards con iconos:
-- 🧠 **Sabes exactamente qué sigue** en cada etapa
-- 💰 **Evitas errores que cuestan miles** de dólares
-- 🏡 **Compras con tranquilidad**, no con miedo
-
-### 4. CTA Intermedio
-- "Quiero entender cómo comprar bien mi casa"
-- Diseño centrado con fondo destacado
-
-### 5. Social Proof (Testimonios)
-- 3 testimonios reales con nombres, contexto y estrellas
-- Axel C., Roel G., Pedro G.
-- Diseño tipo cards elegantes
-
-### 6. FAQ (Preguntas Frecuentes)
-Accordion expandible:
-- ¿La llamada tiene algún costo?
-- ¿Y si todavía no estoy listo para comprar?
-- ¿Solo trabajas con cierto tipo de propiedades?
-- ¿Qué pasa después de la llamada?
-
-### 7. Cómo Funciona (3 Pasos)
-- **Paso 1:** Agenda la llamada
-- **Paso 2:** Entiende todo tu proceso de compra
-- **Paso 3:** Avanza con claridad y seguridad
-
-### 8. CTA Final + Footer
-- **Mensaje emotivo:** "Comprar tu primera casa no debería sentirse confuso. Hazlo con claridad desde el inicio."
-- **Botón CTA final**
-- **Footer:** Logo, aviso de privacidad, términos, contacto
+### 4. Ajustar estilos de los items
+- Cada `CarouselItem` tendra un ancho responsive:
+  - Mobile: 85% del viewport
+  - Tablet: 45% del viewport  
+  - Desktop: 32% del viewport
+- Mantener el aspect ratio 4:3 y bordes redondeados actuales
 
 ---
 
-## ✅ Características Técnicas
-- 100% responsive (mobile-first)
-- Animaciones sutiles en scroll
-- CTAs visibles y bien posicionados
-- Jerarquía visual clara
-- Placeholders de alta calidad para imágenes
-- Formulario de contacto visual (sin backend por ahora)
+## Detalles Tecnicos
 
----
+**Archivo a modificar:** `src/components/landing/Hero.tsx`
 
-## 📦 Entregable
-Primera versión completa de la landing en Lovable, lista para:
-- Revisión y aprobación del diseño
-- Reemplazo de imágenes placeholder por fotos reales
-- Futura integración de backend si se requiere
+**Dependencia a instalar:** `embla-carousel-autoplay`
 
+**Estructura del carrusel:**
+```text
+<Carousel opts={{ align: "start", loop: true }} plugins={[Autoplay({ delay: 4000 })]}>
+  <CarouselContent>
+    {properties.map(property => (
+      <CarouselItem className="basis-[85vw] md:basis-[45vw] lg:basis-[32vw]">
+        {/* Property card content */}
+      </CarouselItem>
+    ))}
+  </CarouselContent>
+</Carousel>
+```
+
+**Comportamiento esperado:**
+- El carrusel se desliza automaticamente cada 4 segundos
+- El usuario puede arrastrar para navegar manualmente
+- El carrusel se pausa cuando el usuario interactua con el
+- El ciclo es infinito (loop)
