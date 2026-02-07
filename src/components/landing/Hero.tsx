@@ -2,16 +2,16 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import propertyPinePoint from "@/assets/property-pine-point.png";
+import propertyElgin from "@/assets/property-elgin.jpeg";
 import propertyGreinertDr from "@/assets/property-greinert-dr.png";
 import propertySynergyDr from "@/assets/property-synergy-dr.png";
 import propertyMichaelLn from "@/assets/property-michael-ln.png";
 const properties = [{
   id: 1,
-  image: propertyPinePoint,
-  title: "116 Pine Point Cv",
-  description: "Beautiful new construction home sitting on a full 1-acre lot in a peaceful community. This property offers space, privacy, and the comfort of living in an established neighborhood.",
-  bedrooms: 4,
+  image: propertyElgin,
+  title: "Elgin Property",
+  description: "Beautiful stone and wood home with 10k Flex Cash incentive. Features elegant craftsmanship, spacious garage, and a lush green yard in a peaceful setting.",
+  bedrooms: 3,
   bathrooms: "2"
 }, {
   id: 2,
