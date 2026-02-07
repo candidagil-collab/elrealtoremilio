@@ -1,13 +1,32 @@
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
+import { useState, useEffect } from "react";
 import logoEmilio from "@/assets/logo-emilio-sanchez.png";
 
 const Hero = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Change at 100px scroll (roughly past hero viewport)
+      setIsScrolled(window.scrollY > 100);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section className="relative min-h-screen bg-background">
       {/* Header with Logo and Navigation */}
-      <header className="container py-6">
-        <div className="flex items-center justify-between bg-background/80 backdrop-blur-md border border-border/50 rounded-full px-6 py-3 shadow-sm">
+      <header className="fixed top-0 left-0 right-0 z-50 py-4 px-4 md:px-6 transition-all duration-300">
+        <div 
+          className={`container mx-auto flex items-center justify-between rounded-full px-6 py-3 transition-all duration-300 ${
+            isScrolled 
+              ? "bg-background border border-border shadow-md" 
+              : "bg-background/80 backdrop-blur-md border border-border/50 shadow-sm"
+          }`}
+        >
           {/* Logo */}
           <img
             alt="Emilio Sanchez Real Estate"
@@ -39,7 +58,7 @@ const Hero = () => {
       </header>
 
       {/* Hero Content */}
-      <div className="container">
+      <div className="container pt-24">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 py-16 lg:py-24 min-h-[70vh] items-center">
           {/* Left Column - Large Headline */}
           <div className="lg:col-span-7 animate-fade-in">
