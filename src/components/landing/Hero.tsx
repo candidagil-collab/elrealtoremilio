@@ -1,17 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle } from "lucide-react";
 import logoEmilio from "@/assets/logo-emilio-sanchez.png";
-
 const Hero = () => {
-  return (
-    <section className="relative min-h-screen bg-background">
+  return <section className="relative min-h-screen bg-background">
       {/* Header with Logo */}
       <header className="container py-6">
-        <img
-          src={logoEmilio}
-          alt="Emilio Sanchez Real Estate"
-          className="h-12 md:h-16 w-auto"
-        />
+        <img alt="Emilio Sanchez Real Estate" className="h-12 md:h-16 w-auto" src="/lovable-uploads/c0d4878b-2270-4a18-a632-4568682854a7.png" />
       </header>
 
       {/* Hero Content */}
@@ -33,10 +27,7 @@ const Hero = () => {
 
             {/* CTA Button */}
             <div className="space-y-4">
-              <Button
-                size="lg"
-                className="font-body text-base md:text-lg px-8 py-6 h-auto rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 bg-primary hover:bg-primary/90"
-              >
+              <Button size="lg" className="font-body text-base md:text-lg px-8 py-6 h-auto rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 bg-primary hover:bg-primary/90">
                 Agenda una llamada y entiende tu proceso de compra
               </Button>
 
@@ -59,24 +50,16 @@ const Hero = () => {
           </div>
 
           {/* Right Column - Image Placeholder */}
-          <div className="relative animate-slide-in-right" style={{ animationDelay: "0.2s" }}>
+          <div className="relative animate-slide-in-right" style={{
+          animationDelay: "0.2s"
+        }}>
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/10 to-primary/5">
               {/* Placeholder for professional image */}
               <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/20 to-primary/5">
                 <div className="text-center p-8">
                   <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-primary/20 flex items-center justify-center">
-                    <svg
-                      className="w-12 h-12 text-primary"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={1.5}
-                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                      />
+                    <svg className="w-12 h-12 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                     </svg>
                   </div>
                   <p className="text-primary/70 font-body text-sm">
@@ -91,8 +74,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
