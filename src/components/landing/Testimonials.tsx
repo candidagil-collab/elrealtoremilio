@@ -5,7 +5,7 @@ const Testimonials = () => {
   const testimonials = [
     {
       name: "Axel C.",
-      context: "First home in Florida",
+      context: "First home in Jarrell",
       quote:
         "Emilio guided us through every step of the process. Thanks to his advice, we avoided mistakes that would have cost us thousands of dollars. Highly recommended!",
       rating: 5,
