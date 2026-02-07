@@ -22,8 +22,8 @@ const CTASection = ({ variant = "primary" }: CTASectionProps) => {
             }`}
           >
             {isPrimary
-              ? "Quiero entender cómo comprar bien mi casa"
-              : "Comprar tu primera casa no debería sentirse confuso"}
+              ? "I want to understand how to buy my home the right way"
+              : "Buying your first home shouldn't feel confusing"}
           </h2>
           <p
             className={`font-body text-lg mb-8 ${
@@ -33,8 +33,8 @@ const CTASection = ({ variant = "primary" }: CTASectionProps) => {
             }`}
           >
             {isPrimary
-              ? "Agenda tu llamada gratuita y obtén claridad sobre tu proceso de compra desde el primer minuto."
-              : "Hazlo con claridad desde el inicio. Agenda tu llamada y da el primer paso con confianza."}
+              ? "Schedule your free call and get clarity on your home buying process from minute one."
+              : "Do it with clarity from the start. Schedule your call and take the first step with confidence."}
           </p>
           <Button
             size="lg"
@@ -44,7 +44,7 @@ const CTASection = ({ variant = "primary" }: CTASectionProps) => {
                 : "bg-primary text-primary-foreground hover:bg-primary/90"
             }`}
           >
-            Agenda tu llamada gratuita
+            Schedule your free call
             <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>

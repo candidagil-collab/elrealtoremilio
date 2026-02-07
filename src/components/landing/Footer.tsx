@@ -20,25 +20,25 @@ const Footer = () => {
               href="#"
               className="font-body text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
             >
-              Aviso de privacidad
+              Privacy Policy
             </a>
             <a
               href="#"
               className="font-body text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
             >
-              Términos y condiciones
+              Terms & Conditions
             </a>
             <a
               href="#"
               className="font-body text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
             >
-              Contacto
+              Contact
             </a>
           </nav>
 
           {/* Copyright */}
           <p className="font-body text-sm text-primary-foreground/60">
-            © {currentYear} Emilio Sanchez Real Estate. Todos los derechos reservados.
+            © {currentYear} Emilio Sanchez Real Estate. All rights reserved.
           </p>
         </div>
       </div>
