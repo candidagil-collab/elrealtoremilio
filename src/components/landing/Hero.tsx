@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight } from "lucide-react";
 import { useState, useEffect } from "react";
-import logoEmilio from "@/assets/logo-emilio-sanchez.png";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import propertyPinePoint from "@/assets/property-pine-point.png";
 import propertyGreinertDr from "@/assets/property-greinert-dr.png";
 import propertySynergyDr from "@/assets/property-synergy-dr.png";
+
 const properties = [{
   id: 1,
   image: propertyPinePoint,
@@ -36,7 +37,8 @@ const Hero = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  return <section className="relative min-h-screen bg-background">
+  return (
+    <section className="relative min-h-screen bg-background">
       {/* Header with Logo and Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 py-4 px-4 md:px-6 transition-all duration-300">
         <div className={`container mx-auto flex items-center justify-between rounded-full px-6 py-3 transition-all duration-300 ${isScrolled ? "bg-background border border-border shadow-md" : "bg-background/80 backdrop-blur-md border border-border/50 shadow-sm"}`}>
@@ -88,49 +90,81 @@ const Hero = () => {
       </div>
 
       {/* Featured Properties Section */}
-      <div className="w-full overflow-hidden py-8">
-        <div className="flex gap-4 animate-fade-in" style={{
-        animationDelay: "0.3s"
-      }}>
-          {/* Property Cards */}
-          {properties.map(property => <div key={property.id} className="relative flex-shrink-0 w-[85vw] md:w-[45vw] lg:w-[32vw] aspect-[4/3] rounded-xl overflow-hidden group cursor-pointer">
-              {/* Property Image or Placeholder */}
-              {property.image ? <img src={property.image} alt={property.title} className="absolute inset-0 w-full h-full object-cover" /> : <div className="absolute inset-0 bg-gradient-to-br from-muted to-muted/50" />}
-              
-              {/* Dark overlay for text readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              
-              {/* Featured badge */}
-              <div className="absolute top-4 left-4">
-                <span className="font-body text-xs tracking-widest text-white/90 uppercase">
-                  Featured Listing
-                </span>
-              </div>
-
-              {/* Property Info - Bottom */}
-              {property.image && property.description ? <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="font-display text-2xl md:text-3xl font-medium mb-2">
-                    {property.title}
-                  </h3>
-                  <p className="font-body text-sm text-white/80 mb-3 line-clamp-2">
-                    {property.description}
-                  </p>
-                  {property.bedrooms && property.bathrooms && (
-                    <p className="font-body text-sm text-white/90">
-                      {property.bedrooms} Bedrooms / {property.bathrooms} Bathrooms
-                    </p>
+      <div className="w-full py-8 animate-fade-in" style={{ animationDelay: "0.3s" }}>
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 4000,
+              stopOnInteraction: true,
+            }),
+          ]}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-4">
+            {properties.map((property) => (
+              <CarouselItem
+                key={property.id}
+                className="pl-4 basis-[85vw] md:basis-[45vw] lg:basis-[32vw]"
+              >
+                <div className="relative aspect-[4/3] rounded-xl overflow-hidden group cursor-pointer">
+                  {/* Property Image or Placeholder */}
+                  {property.image ? (
+                    <img
+                      src={property.image}
+                      alt={property.title}
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 bg-gradient-to-br from-muted to-muted/50" />
                   )}
-                </div> : <div className="absolute top-4 left-4">
-                  <span className="font-body text-xs tracking-widest text-foreground/70 bg-background/80 backdrop-blur-sm px-3 py-1.5 rounded-full">
-                    PROPIEDAD DESTACADA
-                  </span>
-                </div>}
 
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
-            </div>)}
-        </div>
+                  {/* Dark overlay for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+                  {/* Featured badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="font-body text-xs tracking-widest text-white/90 uppercase">
+                      Featured Listing
+                    </span>
+                  </div>
+
+                  {/* Property Info - Bottom */}
+                  {property.image && property.description ? (
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <h3 className="font-display text-2xl md:text-3xl font-medium mb-2">
+                        {property.title}
+                      </h3>
+                      <p className="font-body text-sm text-white/80 mb-3 line-clamp-2">
+                        {property.description}
+                      </p>
+                      {property.bedrooms && property.bathrooms && (
+                        <p className="font-body text-sm text-white/90">
+                          {property.bedrooms} Bedrooms / {property.bathrooms} Bathrooms
+                        </p>
+                      )}
+                    </div>
+                  ) : (
+                    <div className="absolute top-4 left-4">
+                      <span className="font-body text-xs tracking-widest text-foreground/70 bg-background/80 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                        PROPIEDAD DESTACADA
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300" />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;
