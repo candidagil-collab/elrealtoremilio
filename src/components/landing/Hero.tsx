@@ -81,7 +81,7 @@ const Hero = () => {
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 py-16 lg:py-24 min-h-[70vh] items-center">
           {/* Left Column - Large Headline */}
           <div className="lg:col-span-7 animate-fade-in">
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium leading-[1.1] tracking-tight text-black">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium leading-[1.1] tracking-tight text-foreground">
               Licensed Real Estate Agent Based in the Austin Area
             </h1>
           </div>
@@ -90,7 +90,7 @@ const Hero = () => {
           <div className="lg:col-span-5 flex flex-col justify-center animate-fade-in" style={{
           animationDelay: "0.15s"
         }}>
-            <p className="text-base md:text-lg font-body leading-relaxed max-w-md text-black">
+            <p className="text-base md:text-lg font-body leading-relaxed max-w-md text-foreground">
               I guide you step by step through every stage of the buying process, so you can make informed decisions and avoid mistakes that could cost you thousands of dollars.
             </p>
           </div>
