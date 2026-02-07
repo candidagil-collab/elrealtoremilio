@@ -6,7 +6,6 @@ import propertyPinePoint from "@/assets/property-pine-point.png";
 import propertyGreinertDr from "@/assets/property-greinert-dr.png";
 import propertySynergyDr from "@/assets/property-synergy-dr.png";
 import propertyMichaelLn from "@/assets/property-michael-ln.png";
-
 const properties = [{
   id: 1,
   image: propertyPinePoint,
@@ -45,8 +44,7 @@ const Hero = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  return (
-    <section className="relative min-h-screen bg-background">
+  return <section className="relative min-h-screen bg-background">
       {/* Header with Logo and Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 py-4 px-4 md:px-6 transition-all duration-300">
         <div className={`container mx-auto flex items-center justify-between rounded-full px-6 py-3 transition-all duration-300 ${isScrolled ? "bg-background border border-border shadow-md" : "bg-background/80 backdrop-blur-md border border-border/50 shadow-sm"}`}>
@@ -98,38 +96,22 @@ const Hero = () => {
       </div>
 
       {/* Featured Properties Section */}
-      <div className="w-full pb-8 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          plugins={[
-            Autoplay({
-              delay: 4000,
-              stopOnInteraction: false,
-              stopOnMouseEnter: true,
-            }),
-          ]}
-          className="w-full"
-        >
+      <div className="w-full pb-8 animate-fade-in" style={{
+      animationDelay: "0.3s"
+    }}>
+        <Carousel opts={{
+        align: "start",
+        loop: true
+      }} plugins={[Autoplay({
+        delay: 4000,
+        stopOnInteraction: false,
+        stopOnMouseEnter: true
+      })]} className="w-full">
           <CarouselContent className="-ml-4">
-            {properties.map((property) => (
-              <CarouselItem
-                key={property.id}
-                className="pl-4 basis-[90vw] md:basis-[60vw] lg:basis-[50vw]"
-              >
+            {properties.map(property => <CarouselItem key={property.id} className="pl-4 basis-[90vw] md:basis-[60vw] lg:basis-[50vw]">
                 <div className="relative aspect-[16/10] md:aspect-[16/9] rounded-xl overflow-hidden group cursor-pointer">
                   {/* Property Image */}
-                  {property.image ? (
-                    <img
-                      src={property.image}
-                      alt={property.title}
-                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  ) : (
-                    <div className="absolute inset-0 bg-gradient-to-br from-muted to-muted/50" />
-                  )}
+                  {property.image ? <img src={property.image} alt={property.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" /> : <div className="absolute inset-0 bg-gradient-to-br from-muted to-muted/50" />}
 
                   {/* Dark overlay for text readability */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
@@ -149,23 +131,18 @@ const Hero = () => {
                     <p className="font-body text-sm md:text-base text-white/80 mb-4 line-clamp-2 max-w-xl">
                       {property.description}
                     </p>
-                    {property.bedrooms && property.bathrooms && (
-                      <p className="font-body text-sm md:text-base text-white/90">
+                    {property.bedrooms && property.bathrooms && <p className="font-body text-sm md:text-base text-white/90">
                         {property.bedrooms} Bedrooms / {property.bathrooms} Bathroom
-                      </p>
-                    )}
+                      </p>}
                   </div>
 
                   {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300 rounded-none opacity-0" />
                 </div>
-              </CarouselItem>
-            ))}
+              </CarouselItem>)}
           </CarouselContent>
         </Carousel>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
