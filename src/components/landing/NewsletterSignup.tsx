@@ -46,7 +46,7 @@ const NewsletterSignup = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-secondary">
+    <section className="py-16 md:py-24 bg-background">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto">
           <p className="font-body text-sm tracking-widest text-muted-foreground mb-4 uppercase">
