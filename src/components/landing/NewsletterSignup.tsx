@@ -46,13 +46,13 @@ const NewsletterSignup = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section className="py-16 md:py-24 bg-primary">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto">
-          <p className="font-body text-sm tracking-widest text-muted-foreground mb-4 uppercase">
+          <p className="font-body text-sm tracking-widest text-primary-foreground/70 mb-4 uppercase">
             Need something different?
           </p>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-foreground mb-8">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-primary-foreground mb-8">
             Get Notified When We Have New House On Our List
           </h2>
           
@@ -62,7 +62,7 @@ const NewsletterSignup = () => {
               placeholder="Your Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="h-12 bg-background border-border rounded-lg px-4 md:flex-1"
+              className="h-12 bg-primary-foreground text-foreground border-transparent rounded-lg px-4 md:flex-1 placeholder:text-muted-foreground"
               maxLength={100}
             />
             <Input
@@ -70,20 +70,20 @@ const NewsletterSignup = () => {
               placeholder="Email Address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="h-12 bg-background border-border rounded-lg px-4 md:flex-1"
+              className="h-12 bg-primary-foreground text-foreground border-transparent rounded-lg px-4 md:flex-1 placeholder:text-muted-foreground"
               maxLength={255}
             />
             <Button 
               type="submit" 
               disabled={isLoading}
-              className="h-12 px-6 bg-foreground text-background hover:bg-foreground/90 rounded-full font-medium"
+              className="h-12 px-6 bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-full font-medium"
             >
               {isLoading ? "Subscribing..." : "SUBSCRIBE"}
               <ArrowUpRight className="ml-2 h-4 w-4" />
             </Button>
           </form>
           
-          <p className="font-body text-sm text-muted-foreground">
+          <p className="font-body text-sm text-primary-foreground/70">
             No spam. Only house updates.
           </p>
         </div>
