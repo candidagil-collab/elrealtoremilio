@@ -24,23 +24,25 @@ const Index = () => {
       {/* 4. CTA Intermedio */}
       <CTASection variant="primary" />
 
-      {/* 5. Newsletter Signup */}
-      <NewsletterSignup />
-
-      {/* 6. Video Showcase */}
+      {/* 5. Video Showcase */}
       <VideoShowcase />
 
       {/* 6. Testimonials */}
       <Testimonials />
 
-      {/* 6. FAQ */}
+      {/* 7. FAQ */}
       <FAQ />
 
-      {/* 7. How It Works */}
+      {/* 8. How It Works */}
       <HowItWorks />
 
-      {/* 8. Final CTA + Footer */}
+      {/* 9. Final CTA */}
       <CTASection variant="secondary" />
+
+      {/* 10. Newsletter Signup */}
+      <NewsletterSignup />
+      
+      {/* 11. Footer */}
       <Footer />
     </main>
   );
