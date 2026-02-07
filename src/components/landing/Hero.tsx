@@ -3,27 +3,28 @@ import { ArrowUpRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import logoEmilio from "@/assets/logo-emilio-sanchez.png";
 import propertyPinePoint from "@/assets/property-pine-point.png";
+import propertyGreinertDr from "@/assets/property-greinert-dr.png";
 const properties = [{
   id: 1,
   image: propertyPinePoint,
   title: "116 Pine Point Cv",
   description: "Beautiful new construction home sitting on a full 1-acre lot in a peaceful community. This property offers space, privacy, and the comfort of living in an established neighborhood.",
   bedrooms: 4,
-  bathrooms: 2
+  bathrooms: "2"
 }, {
   id: 2,
-  image: null,
-  title: "Propiedad Destacada",
-  description: "",
-  bedrooms: 0,
-  bathrooms: 0
+  image: propertyGreinertDr,
+  title: "104 Greinert Dr",
+  description: "104 Greinert Dr",
+  bedrooms: 3,
+  bathrooms: "2.5"
 }, {
   id: 3,
   image: null,
   title: "Propiedad Destacada",
   description: "",
   bedrooms: 0,
-  bathrooms: 0
+  bathrooms: "0"
 }];
 const Hero = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -114,7 +115,7 @@ const Hero = () => {
                     {property.description}
                   </p>
                   <p className="font-body text-sm text-white/90">
-                    {property.bedrooms} Bedrooms / {property.bathrooms} Bathroom
+                    {property.bedrooms} Bedrooms / {property.bathrooms} Bathrooms
                   </p>
                 </div> : <div className="absolute top-4 left-4">
                   <span className="font-body text-xs tracking-widest text-foreground/70 bg-background/80 backdrop-blur-sm px-3 py-1.5 rounded-full">
