@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import propertyElgin from "@/assets/property-elgin.jpeg";
-import propertyGreinertDr from "@/assets/property-greinert-dr.png";
+import propertyGreinertDr from "@/assets/property-greinert-dr.jpeg";
 import propertySynergyDr from "@/assets/property-synergy-dr.png";
 import propertyMichaelLn from "@/assets/property-michael-ln.png";
 const properties = [{
