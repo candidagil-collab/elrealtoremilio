@@ -79,7 +79,7 @@ const Hero = () => {
           animationDelay: "0.15s"
         }}>
             <p className="text-base md:text-lg font-body leading-relaxed max-w-md text-black">
-              Te acompaño paso a paso en cada etapa del proceso de compra, para que tomes decisiones informadas y evites errores que pueden costarte miles de dólares.
+              I guide you step by step through every stage of the buying process, so you can make informed decisions and avoid mistakes that could cost you thousands of dollars.
             </p>
           </div>
         </div>
