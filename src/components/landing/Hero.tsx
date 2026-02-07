@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import logoEmilio from "@/assets/logo-emilio-sanchez.png";
 import propertyPinePoint from "@/assets/property-pine-point.png";
 import propertyGreinertDr from "@/assets/property-greinert-dr.png";
+import propertySynergyDr from "@/assets/property-synergy-dr.png";
 const properties = [{
   id: 1,
   image: propertyPinePoint,
@@ -15,16 +16,16 @@ const properties = [{
   id: 2,
   image: propertyGreinertDr,
   title: "104 Greinert Dr",
-  description: "104 Greinert Dr",
+  description: "Brand-new home for rent! Located just 2 minutes from Walmart and H-E-B, less than 10 minutes from the Samsung plant in Taylor, and under 3 minutes from the elementary and middle school.",
   bedrooms: 3,
   bathrooms: "2.5"
 }, {
   id: 3,
-  image: null,
-  title: "Propiedad Destacada",
-  description: "",
-  bedrooms: 0,
-  bathrooms: "0"
+  image: propertySynergyDr,
+  title: "3.9 Acres Synergy Dr",
+  description: "Experience the allure of Texas countryside living with this remarkable 3.91-acre parcel nestled in the heart of Bastrop.",
+  bedrooms: null,
+  bathrooms: null
 }];
 const Hero = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -114,9 +115,11 @@ const Hero = () => {
                   <p className="font-body text-sm text-white/80 mb-3 line-clamp-2">
                     {property.description}
                   </p>
-                  <p className="font-body text-sm text-white/90">
-                    {property.bedrooms} Bedrooms / {property.bathrooms} Bathrooms
-                  </p>
+                  {property.bedrooms && property.bathrooms && (
+                    <p className="font-body text-sm text-white/90">
+                      {property.bedrooms} Bedrooms / {property.bathrooms} Bathrooms
+                    </p>
+                  )}
                 </div> : <div className="absolute top-4 left-4">
                   <span className="font-body text-xs tracking-widest text-foreground/70 bg-background/80 backdrop-blur-sm px-3 py-1.5 rounded-full">
                     PROPIEDAD DESTACADA
