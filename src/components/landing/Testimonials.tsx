@@ -19,7 +19,7 @@ const Testimonials = () => {
     },
     {
       name: "Pedro G.",
-      context: "Residential investment",
+      context: "First-time buyer in Hutto",
       quote:
         "Professional, patient, and very knowledgeable about the market. Emilio made a process that seemed complicated simple and stress-free.",
       rating: 5,
