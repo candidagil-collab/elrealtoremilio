@@ -7,31 +7,33 @@ const Hero = () => {
     <section className="relative min-h-screen bg-background">
       {/* Header with Logo and Navigation */}
       <header className="container py-6">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between bg-background/80 backdrop-blur-md border border-border/50 rounded-full px-6 py-3 shadow-sm">
           {/* Logo */}
           <img
             alt="Emilio Sanchez Real Estate"
-            className="h-10 md:h-12 w-auto"
+            className="h-8 md:h-10 w-auto"
             src={logoEmilio}
           />
 
           {/* Navigation - Hidden on mobile */}
           <nav className="hidden md:flex items-center gap-8">
             <a href="#beneficios" className="font-body text-sm text-foreground hover:text-primary transition-colors">
-              BENEFICIOS
+              Home
             </a>
             <a href="#testimonios" className="font-body text-sm text-foreground hover:text-primary transition-colors">
-              TESTIMONIOS
+              Properties
             </a>
             <a href="#proceso" className="font-body text-sm text-foreground hover:text-primary transition-colors">
-              PROCESO
+              About
+            </a>
+            <a href="#faq" className="font-body text-sm text-foreground hover:text-primary transition-colors">
+              Blog
             </a>
           </nav>
 
           {/* CTA Button */}
-          <Button className="font-body text-sm px-6 py-2.5 h-auto rounded-full bg-primary hover:bg-primary/90 group">
-            AGENDA LLAMADA
-            <ArrowUpRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          <Button className="font-body text-sm px-5 py-2 h-auto rounded-full bg-foreground text-background hover:bg-foreground/90">
+            Talk to an Agent
           </Button>
         </div>
       </header>
