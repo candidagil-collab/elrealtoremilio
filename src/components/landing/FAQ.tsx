@@ -8,24 +8,24 @@ import {
 const FAQ = () => {
   const faqs = [
     {
-      question: "¿La llamada tiene algún costo?",
+      question: "Is the call free?",
       answer:
-        "No, la llamada inicial es completamente gratuita y sin compromiso. Es una oportunidad para conocernos, entender tu situación actual y explicarte cómo puedo ayudarte en tu proceso de compra.",
+        "Yes, the initial call is completely free and with no obligation. It's an opportunity to get to know each other, understand your current situation, and explain how I can help you in your home buying process.",
     },
     {
-      question: "¿Y si todavía no estoy listo para comprar?",
+      question: "What if I'm not ready to buy yet?",
       answer:
-        "¡Perfecto! De hecho, es el mejor momento para tener esta conversación. Te ayudaré a entender qué pasos necesitas dar para estar listo, cuánto tiempo podría tomar y qué puedes ir preparando desde ahora.",
+        "Perfect! In fact, it's the best time to have this conversation. I'll help you understand what steps you need to take to be ready, how long it might take, and what you can start preparing now.",
     },
     {
-      question: "¿Solo trabajas con cierto tipo de propiedades?",
+      question: "Do you only work with certain types of properties?",
       answer:
-        "Trabajo principalmente con familias que buscan su primera vivienda o casa familiar. Mi enfoque está en propiedades residenciales que se ajusten a tus necesidades y presupuesto, siempre priorizando tu bienestar a largo plazo.",
+        "I primarily work with families looking for their first home or family house. My focus is on residential properties that fit your needs and budget, always prioritizing your long-term well-being.",
     },
     {
-      question: "¿Qué pasa después de la llamada?",
+      question: "What happens after the call?",
       answer:
-        "Después de nuestra llamada, tendrás total claridad sobre los siguientes pasos de tu proceso. Si decides trabajar conmigo, te acompañaré en cada etapa. Si prefieres tomar otro camino, al menos tendrás información valiosa para avanzar con confianza.",
+        "After our call, you'll have complete clarity on the next steps in your process. If you decide to work with me, I'll accompany you at every stage. If you prefer to take another path, at least you'll have valuable information to move forward with confidence.",
     },
   ];
 
@@ -35,10 +35,10 @@ const FAQ = () => {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
-              Preguntas frecuentes
+              Frequently Asked Questions
             </h2>
             <p className="font-body text-lg text-muted-foreground">
-              Resuelve tus dudas antes de dar el siguiente paso
+              Get your questions answered before taking the next step
             </p>
           </div>
 

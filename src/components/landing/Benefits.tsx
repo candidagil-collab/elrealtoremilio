@@ -3,25 +3,25 @@ import { Brain, DollarSign, Home } from "lucide-react";
 const Benefits = () => {
   const benefits = [{
     icon: Brain,
-    title: "Sabes exactamente qué sigue",
-    description: "En cada etapa del proceso de compra tendrás claridad total sobre los siguientes pasos, documentos y decisiones importantes."
+    title: "Know exactly what's next",
+    description: "At every stage of the buying process, you'll have total clarity on the next steps, documents, and important decisions."
   }, {
     icon: DollarSign,
-    title: "Evitas errores que cuestan miles",
-    description: "Te guío para identificar problemas antes de que se conviertan en gastos inesperados que afecten tu inversión."
+    title: "Avoid costly mistakes",
+    description: "I guide you to identify problems before they become unexpected expenses that affect your investment."
   }, {
     icon: Home,
-    title: "Compras con tranquilidad, no con miedo",
-    description: "Toma decisiones informadas con la confianza de que estás haciendo lo correcto para ti y tu familia."
+    title: "Buy with confidence, not fear",
+    description: "Make informed decisions with the confidence that you're doing the right thing for you and your family."
   }];
   return <section className="py-16 md:py-24 bg-background">
       <div className="container">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="font-display text-3xl font-semibold mb-4 text-primary md:text-5xl">
-            ¿Por qué trabajar conmigo?
+            Why work with me?
           </h2>
           <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-            Mi enfoque está en darte claridad y seguridad en cada paso del proceso
+            My focus is on giving you clarity and confidence at every step of the process
           </p>
         </div>
 

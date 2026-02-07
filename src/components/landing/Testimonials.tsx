@@ -5,23 +5,23 @@ const Testimonials = () => {
   const testimonials = [
     {
       name: "Axel C.",
-      context: "Primera casa en Florida",
+      context: "First home in Florida",
       quote:
-        "Emilio nos guió en cada paso del proceso. Gracias a su asesoría evitamos errores que nos hubieran costado miles de dólares. ¡Altamente recomendado!",
+        "Emilio guided us through every step of the process. Thanks to his advice, we avoided mistakes that would have cost us thousands of dollars. Highly recommended!",
       rating: 5,
     },
     {
       name: "Roel G.",
-      context: "Comprador primerizo en Texas",
+      context: "First-time buyer in Texas",
       quote:
-        "La claridad que Emilio nos dio desde la primera llamada fue increíble. Sabíamos exactamente qué esperar en cada etapa y eso nos dio mucha tranquilidad.",
+        "The clarity Emilio gave us from the first call was incredible. We knew exactly what to expect at each stage, and that gave us great peace of mind.",
       rating: 5,
     },
     {
       name: "Pedro G.",
-      context: "Inversión residencial",
+      context: "Residential investment",
       quote:
-        "Profesional, paciente y muy conocedor del mercado. Emilio hizo que un proceso que parecía complicado fuera simple y sin estrés.",
+        "Professional, patient, and very knowledgeable about the market. Emilio made a process that seemed complicated simple and stress-free.",
       rating: 5,
     },
   ];
@@ -31,10 +31,10 @@ const Testimonials = () => {
       <div className="container">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
-            Lo que dicen nuestros clientes
+            What our clients say
           </h2>
           <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-            Familias reales que compraron su casa con claridad y confianza
+            Real families who bought their home with clarity and confidence
           </p>
         </div>
 

@@ -5,23 +5,23 @@ const HowItWorks = () => {
     {
       number: "01",
       icon: Calendar,
-      title: "Agenda la llamada",
+      title: "Schedule the call",
       description:
-        "Elige el horario que mejor te funcione. Es gratis, sin compromiso y dura aproximadamente 30 minutos.",
+        "Choose the time that works best for you. It's free, no obligation, and takes approximately 30 minutes.",
     },
     {
       number: "02",
       icon: MessageSquare,
-      title: "Entiende todo tu proceso",
+      title: "Understand your entire process",
       description:
-        "En nuestra llamada analizamos tu situación actual y te explico paso a paso lo que necesitas saber para comprar bien.",
+        "In our call, we analyze your current situation and I explain step by step what you need to know to buy smart.",
     },
     {
       number: "03",
       icon: CheckCircle2,
-      title: "Avanza con claridad",
+      title: "Move forward with clarity",
       description:
-        "Con un plan claro en mente, podrás tomar decisiones informadas y avanzar con total seguridad hacia tu nueva casa.",
+        "With a clear plan in mind, you'll be able to make informed decisions and move forward with complete confidence toward your new home.",
     },
   ];
 
@@ -30,10 +30,10 @@ const HowItWorks = () => {
       <div className="container">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
-            ¿Cómo funciona?
+            How does it work?
           </h2>
           <p className="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
-            Tres pasos simples para comenzar tu camino hacia tu primera casa
+            Three simple steps to start your journey toward your first home
           </p>
         </div>
 
