@@ -5,6 +5,7 @@ import Autoplay from "embla-carousel-autoplay";
 import propertyPinePoint from "@/assets/property-pine-point.png";
 import propertyGreinertDr from "@/assets/property-greinert-dr.png";
 import propertySynergyDr from "@/assets/property-synergy-dr.png";
+import propertyMichaelLn from "@/assets/property-michael-ln.png";
 
 const properties = [{
   id: 1,
@@ -25,6 +26,13 @@ const properties = [{
   image: propertySynergyDr,
   title: "3.9 Acres Synergy Dr",
   description: "Experience the allure of Texas countryside living with this remarkable 3.91-acre parcel nestled in the heart of Bastrop.",
+  bedrooms: null,
+  bathrooms: null
+}, {
+  id: 4,
+  image: propertyMichaelLn,
+  title: "105 Michael Ln",
+  description: "105 Michael Ln (currently not for sale) is located in Frame Switch subdivision in Williamson County.",
   bedrooms: null,
   bathrooms: null
 }];
