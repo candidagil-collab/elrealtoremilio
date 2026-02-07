@@ -90,7 +90,7 @@ const Hero = () => {
           {/* Left Column - Large Headline */}
           <div className="lg:col-span-7 animate-fade-in">
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium leading-[1.1] tracking-tight text-foreground">
-              Agente de Real Estate en Austin Texas
+              Licensed Real Estate Agent Based in the Austin Area
             </h1>
           </div>
 
