@@ -6,6 +6,7 @@ import propertyElgin from "@/assets/property-elgin.jpeg";
 import propertyGreinertDr from "@/assets/property-greinert-dr.jpeg";
 import propertySynergyDr from "@/assets/property-synergy-dr.jpeg";
 import propertyMichaelLn from "@/assets/property-michael-ln.png";
+import propertyKailynneCt from "@/assets/property-kailynne-ct.jpeg";
 const properties = [{
   id: 1,
   image: propertyElgin,
@@ -32,6 +33,13 @@ const properties = [{
   image: propertyMichaelLn,
   title: "105 Michael Ln",
   description: "105 Michael Ln (currently not for sale) is located in Frame Switch subdivision in Williamson County.",
+  bedrooms: null,
+  bathrooms: null
+}, {
+  id: 5,
+  image: propertyKailynneCt,
+  title: "103 Kailynne Ct",
+  description: "103 Kailynne Ct (currently not for sale) is located in Country Meadows Estates subdivision in Milam County.",
   bedrooms: null,
   bathrooms: null
 }];
