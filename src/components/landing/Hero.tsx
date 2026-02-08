@@ -4,7 +4,7 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 import Autoplay from "embla-carousel-autoplay";
 import propertyElgin from "@/assets/property-elgin.jpeg";
 import propertyGreinertDr from "@/assets/property-greinert-dr.jpeg";
-import propertySynergyDr from "@/assets/property-synergy-dr.png";
+import propertySynergyDr from "@/assets/property-synergy-dr.jpeg";
 import propertyMichaelLn from "@/assets/property-michael-ln.png";
 const properties = [{
   id: 1,
