@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { useState, useEffect, useCallback } from "react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import propertyElgin from "@/assets/property-elgin.jpeg";
 import propertyGreinertDr from "@/assets/property-greinert-dr.jpeg";
 import propertySynergyDr from "@/assets/property-synergy-dr.jpeg";
@@ -45,6 +46,10 @@ const properties = [{
 }];
 const Hero = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
@@ -52,6 +57,22 @@ const Hero = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!api) return;
+    
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap());
+    
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap());
+    });
+  }, [api]);
+
+  const scrollTo = useCallback((index: number) => {
+    api?.scrollTo(index);
+  }, [api]);
+
   return <section className="relative min-h-screen bg-background">
       {/* Header with Logo and Navigation */}
       <header className="fixed top-0 left-0 right-0 z-50 py-4 px-4 md:px-6 transition-all duration-300">
@@ -107,14 +128,19 @@ const Hero = () => {
       <div className="w-full pb-8 animate-fade-in" style={{
       animationDelay: "0.3s"
     }}>
-        <Carousel opts={{
-        align: "start",
-        loop: true
-      }} plugins={[Autoplay({
-        delay: 4000,
-        stopOnInteraction: false,
-        stopOnMouseEnter: true
-      })]} className="w-full">
+        <Carousel 
+          setApi={setApi}
+          opts={{
+            align: "start",
+            loop: true
+          }} 
+          plugins={[Autoplay({
+            delay: 4000,
+            stopOnInteraction: false,
+            stopOnMouseEnter: true
+          })]} 
+          className="w-full"
+        >
           <CarouselContent className="-ml-4">
             {properties.map(property => <CarouselItem key={property.id} className="pl-4 basis-[90vw] md:basis-[60vw] lg:basis-[50vw]">
                 <div className="relative aspect-[16/10] md:aspect-[16/9] rounded-xl overflow-hidden group cursor-pointer">
@@ -149,7 +175,31 @@ const Hero = () => {
                 </div>
               </CarouselItem>)}
           </CarouselContent>
+          
+          {/* Navigation Arrows */}
+          <div className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-10">
+            <CarouselNext className="relative right-0 translate-x-0 translate-y-0 h-12 w-12 rounded-full bg-background/90 hover:bg-background border-0 shadow-lg" />
+          </div>
+          <div className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-10">
+            <CarouselPrevious className="relative left-0 translate-x-0 translate-y-0 h-12 w-12 rounded-full bg-background/90 hover:bg-background border-0 shadow-lg" />
+          </div>
         </Carousel>
+        
+        {/* Dot Indicators */}
+        <div className="flex justify-center gap-2 mt-6">
+          {Array.from({ length: count }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => scrollTo(index)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                index === current 
+                  ? "w-8 bg-primary" 
+                  : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"
+              }`}
+              aria-label={`Ir a propiedad ${index + 1}`}
+            />
+          ))}
+        </div>
       </div>
     </section>;
 };
