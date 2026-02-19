@@ -1,63 +1,48 @@
 
-# Plan: Carrusel de Propiedades Destacadas con Auto-slide
 
-## Resumen
-Convertir la sección de propiedades destacadas en un carrusel interactivo que se deslice automáticamente hacia la izquierda, utilizando el componente Carousel existente con el plugin de autoplay de Embla.
+## Plan: Guardar suscripciones del newsletter en la base de datos
 
-## Cambios a Realizar
+### Resumen
+Crear una tabla en la base de datos para almacenar los datos del formulario de suscripcion (nombre y email) y actualizar el componente `NewsletterSignup` para que inserte los datos en la base de datos en lugar de simular la llamada.
 
-### 1. Instalar plugin de autoplay
-Agregar el paquete `embla-carousel-autoplay` para habilitar el deslizamiento automatico.
+### Pasos
 
-### 2. Modificar Hero.tsx
-- Importar los componentes del carrusel (`Carousel`, `CarouselContent`, `CarouselItem`)
-- Importar el plugin `Autoplay` de embla-carousel-autoplay
-- Reemplazar el contenedor `flex` actual por el componente `Carousel`
-- Configurar el autoplay con:
-  - Delay de 4 segundos entre slides
-  - Loop infinito para que el carrusel continue ciclicamente
-  - Pausar al interactuar con el mouse
+1. **Crear tabla `newsletter_subscribers`** (migracion SQL)
+   - Columnas: `id` (uuid), `name` (text), `email` (text unique), `created_at` (timestamp)
+   - Politica RLS: permitir INSERT publico (usuarios anonimos pueden suscribirse) pero restringir SELECT/UPDATE/DELETE
 
-### 3. Configuracion del Carrusel
-```text
-Carousel
-  opts:
-    - align: "start" (alinear slides al inicio)
-    - loop: true (ciclo infinito)
-  plugins:
-    - Autoplay con delay de 4000ms
+2. **Actualizar `NewsletterSignup.tsx`**
+   - Importar el cliente de la base de datos
+   - Reemplazar el `setTimeout` simulado por un `INSERT` real a la tabla `newsletter_subscribers`
+   - Manejar el caso de email duplicado mostrando un mensaje apropiado
+
+### Detalles tecnicos
+
+**Migracion SQL:**
+```sql
+CREATE TABLE public.newsletter_subscribers (
+  id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+  name text NOT NULL,
+  email text NOT NULL UNIQUE,
+  created_at timestamptz DEFAULT now()
+);
+
+ALTER TABLE public.newsletter_subscribers ENABLE ROW LEVEL SECURITY;
+
+-- Permitir que cualquier visitante se suscriba
+CREATE POLICY "Allow anonymous inserts"
+  ON public.newsletter_subscribers FOR INSERT
+  TO anon
+  WITH CHECK (true);
 ```
 
-### 4. Ajustar estilos de los items
-- Cada `CarouselItem` tendra un ancho responsive:
-  - Mobile: 85% del viewport
-  - Tablet: 45% del viewport  
-  - Desktop: 32% del viewport
-- Mantener el aspect ratio 4:3 y bordes redondeados actuales
+**Cambio en el componente:**
+- Importar `supabase` desde `@/integrations/supabase/client`
+- Reemplazar la simulacion por:
+  ```typescript
+  const { error } = await supabase
+    .from('newsletter_subscribers')
+    .insert({ name: result.data.name, email: result.data.email });
+  ```
+- Si hay error de duplicado (code `23505`), mostrar mensaje "Ya estas suscrito"
 
----
-
-## Detalles Tecnicos
-
-**Archivo a modificar:** `src/components/landing/Hero.tsx`
-
-**Dependencia a instalar:** `embla-carousel-autoplay`
-
-**Estructura del carrusel:**
-```text
-<Carousel opts={{ align: "start", loop: true }} plugins={[Autoplay({ delay: 4000 })]}>
-  <CarouselContent>
-    {properties.map(property => (
-      <CarouselItem className="basis-[85vw] md:basis-[45vw] lg:basis-[32vw]">
-        {/* Property card content */}
-      </CarouselItem>
-    ))}
-  </CarouselContent>
-</Carousel>
-```
-
-**Comportamiento esperado:**
-- El carrusel se desliza automaticamente cada 4 segundos
-- El usuario puede arrastrar para navegar manualmente
-- El carrusel se pausa cuando el usuario interactua con el
-- El ciclo es infinito (loop)
