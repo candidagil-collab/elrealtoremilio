@@ -2,30 +2,17 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { properties } from "@/data/properties";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, BedDouble, Bath, MapPin, Ruler, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { BedDouble, Bath, MapPin, Ruler, ArrowRight } from "lucide-react";
 import ContactDialog from "@/components/landing/ContactDialog";
+import Navbar from "@/components/Navbar";
 
 const Properties = () => {
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="bg-background border-b border-border sticky top-0 z-50">
-        <div className="container flex items-center justify-between py-4">
-          <Link to="/" className="flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-foreground transition-colors">
-            <ArrowLeft className="w-4 h-4" />
-            Back to Home
-          </Link>
-          <ContactDialog>
-            <Button className="font-body text-sm px-5 py-2 h-auto rounded-full bg-foreground text-background hover:bg-foreground/90">
-              Talk to an Agent
-            </Button>
-          </ContactDialog>
-        </div>
-      </header>
+      <Navbar />
 
       {/* Page Title */}
-      <section className="py-16 md:py-24">
+      <section className="pt-28 pb-16 md:pt-32 md:pb-24">
         <div className="container">
           <div className="text-center mb-16">
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-foreground mb-4">

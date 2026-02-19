@@ -1,21 +1,20 @@
 import { Button } from "@/components/ui/button";
-import ContactDialog from "@/components/landing/ContactDialog";
 import { useState, useEffect, useCallback } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Navbar from "@/components/Navbar";
 import propertyElgin from "@/assets/property-elgin.jpeg";
 import propertyGreinertDr from "@/assets/property-greinert-dr.jpeg";
 import propertySynergyDr from "@/assets/property-synergy-dr.jpeg";
 import propertyMichaelLn from "@/assets/property-michael-ln.jpeg";
 import propertyKailynneCt from "@/assets/property-kailynne-ct.jpeg";
-import { Link } from "react-router-dom";
 const properties = [{
   id: 1,
   image: propertyElgin,
   title: "116 Pine Point Cv",
   description: "Beautiful stone and wood home with 10k Flex Cash incentive. Features elegant craftsmanship, spacious garage, and a lush green yard in a peaceful setting.",
-  bedrooms: 3,
+  bedrooms: 4,
   bathrooms: "2"
 }, {
   id: 2,
@@ -47,18 +46,9 @@ const properties = [{
   bathrooms: null
 }];
 const Hero = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   useEffect(() => {
     if (!api) return;
@@ -76,36 +66,7 @@ const Hero = () => {
   }, [api]);
 
   return <section className="relative min-h-screen bg-background">
-      {/* Header with Logo and Navigation */}
-      <header className="fixed top-0 left-0 right-0 z-50 py-4 px-4 md:px-6 transition-all duration-300">
-        <div className={`container mx-auto flex items-center justify-between rounded-full px-6 py-3 transition-all duration-300 ${isScrolled ? "bg-background border border-border shadow-md" : "bg-background/80 backdrop-blur-md border border-border/50 shadow-sm"}`}>
-          {/* Logo */}
-          <img alt="Emilio Sanchez Real Estate" className="h-10 md:h-14 w-auto" src="/lovable-uploads/177b0c2e-8c2e-44b7-ad49-3f99ccc6043d.png" />
-
-          {/* Navigation - Hidden on mobile */}
-          <nav className="hidden md:flex items-center gap-8">
-            <a href="#beneficios" className="font-body text-sm text-foreground hover:text-primary transition-colors">
-              Home
-            </a>
-            <Link to="/properties" className="font-body text-sm text-foreground hover:text-primary transition-colors">
-              Properties
-            </Link>
-            <a href="#proceso" className="font-body text-sm text-foreground hover:text-primary transition-colors">
-              About
-            </a>
-            <a href="#faq" className="font-body text-sm text-foreground hover:text-primary transition-colors">
-              Blog
-            </a>
-          </nav>
-
-          {/* CTA Button */}
-          <ContactDialog>
-            <Button className="font-body text-sm px-5 py-2 h-auto rounded-full bg-foreground text-background hover:bg-foreground/90">
-              Talk to an Agent
-            </Button>
-          </ContactDialog>
-        </div>
-      </header>
+      <Navbar />
 
       {/* Hero Content */}
       <div className="container pt-24">
