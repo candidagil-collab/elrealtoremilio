@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import ContactDialog from "@/components/landing/ContactDialog";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { t, language, setLanguage } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,7 +25,6 @@ const Navbar = () => {
             : "bg-background/80 backdrop-blur-md border border-border/50 shadow-sm"
         }`}
       >
-        {/* Logo */}
         <Link to="/">
           <img
             alt="Emilio Sanchez Real Estate"
@@ -32,28 +33,36 @@ const Navbar = () => {
           />
         </Link>
 
-        {/* Navigation - Hidden on mobile */}
         <nav className="hidden md:flex items-center gap-8">
           <Link to="/" className="font-body text-sm text-foreground hover:text-primary transition-colors">
-            Home
+            {t("navbar.home")}
           </Link>
           <Link to="/properties" className="font-body text-sm text-foreground hover:text-primary transition-colors">
-            Properties
+            {t("navbar.properties")}
           </Link>
           <Link to="/calculator" className="font-body text-sm text-foreground hover:text-primary transition-colors">
-            Calculator
+            {t("navbar.calculator")}
           </Link>
           <Link to="/about" className="font-body text-sm text-foreground hover:text-primary transition-colors">
-            About
+            {t("navbar.about")}
           </Link>
         </nav>
 
-        {/* CTA Button */}
-        <ContactDialog>
-          <Button className="font-body text-sm px-5 py-2 h-auto rounded-full bg-foreground text-background hover:bg-foreground/90">
-            Talk to an Agent
-          </Button>
-        </ContactDialog>
+        <div className="flex items-center gap-3">
+          {/* Language Switcher */}
+          <button
+            onClick={() => setLanguage(language === "en" ? "es" : "en")}
+            className="font-body text-xs font-semibold tracking-wide px-3 py-1.5 rounded-full border border-border hover:bg-secondary transition-colors text-foreground"
+          >
+            {language === "en" ? "ES" : "EN"}
+          </button>
+
+          <ContactDialog>
+            <Button className="font-body text-sm px-5 py-2 h-auto rounded-full bg-foreground text-background hover:bg-foreground/90">
+              {t("navbar.cta")}
+            </Button>
+          </ContactDialog>
+        </div>
       </div>
     </header>
   );
