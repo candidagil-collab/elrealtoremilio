@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { ArrowUpRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
+import { supabase } from "@/integrations/supabase/client";
 
 const subscribeSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -32,8 +33,26 @@ const NewsletterSignup = () => {
 
     setIsLoading(true);
     
-    // Simulate API call - replace with actual newsletter service integration
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const { error } = await supabase
+      .from('newsletter_subscribers')
+      .insert({ name: result.data.name, email: result.data.email });
+
+    if (error) {
+      if (error.code === '23505') {
+        toast({
+          title: "Ya estás suscrito",
+          description: "Este email ya se encuentra registrado.",
+        });
+      } else {
+        toast({
+          title: "Error",
+          description: "Hubo un problema al suscribirte. Intenta de nuevo.",
+          variant: "destructive",
+        });
+      }
+      setIsLoading(false);
+      return;
+    }
     
     toast({
       title: "Successfully subscribed!",
