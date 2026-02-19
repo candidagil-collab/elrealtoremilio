@@ -1,79 +1,54 @@
 
-## Sitio web bilingue (English / Español)
 
-### Enfoque
-Crear un sistema de internacionalizacion (i18n) ligero usando React Context, sin dependencias externas. El idioma seleccionado se guarda en localStorage para que persista entre visitas.
+## Paginas legales, contacto en About y Footer actualizado
 
-### Arquitectura
+### 1. Paginas Privacy Policy y Terms & Conditions
 
-1. **Archivos de traducciones** (`src/i18n/en.ts` y `src/i18n/es.ts`)
-   - Diccionarios con todas las cadenas de texto del sitio organizados por seccion (navbar, hero, benefits, faq, about, calculator, properties, footer, contact, etc.)
+Se crearan dos paginas bilingues (EN/ES):
 
-2. **Language Context** (`src/contexts/LanguageContext.tsx`)
-   - Provee `language` (en/es), `setLanguage`, y una funcion `t(key)` para obtener traducciones
-   - Persiste la seleccion en `localStorage`
+**Privacy Policy** (`/privacy`):
+- Datos recopilados (nombre, telefono, mensaje)
+- Uso de la informacion (responder consultas)
+- No se comparten con terceros
+- Contacto: +1 305 490 2669 / elrealtoremilio@gmail.com
+- Derechos del usuario
 
-3. **Selector de idioma en el Navbar**
-   - Un boton compacto (ej. "EN | ES") en la barra de navegacion para cambiar idioma
+**Terms & Conditions** (`/terms`):
+- Uso informativo del sitio
+- Propiedades no constituyen oferta vinculante
+- Limitacion de responsabilidad
+- Contacto
 
-4. **Actualizacion de todos los componentes**
-   - Reemplazar texto hardcoded por llamadas a `t("clave")` en cada archivo
+Ambas con Navbar + Footer y traducciones completas.
 
-### Archivos a crear
-- `src/i18n/en.ts` - diccionario ingles
-- `src/i18n/es.ts` - diccionario español
-- `src/contexts/LanguageContext.tsx` - contexto y hook `useLanguage`
+### 2. Seccion de contacto en About
 
-### Archivos a modificar
-- `src/App.tsx` - envolver con `LanguageProvider`
-- `src/components/Navbar.tsx` - selector de idioma + textos traducidos
-- `src/components/landing/Hero.tsx` - textos traducidos
-- `src/components/landing/AuthorityBar.tsx`
-- `src/components/landing/Benefits.tsx`
-- `src/components/landing/CTASection.tsx`
-- `src/components/landing/VideoShowcase.tsx`
-- `src/components/landing/Testimonials.tsx`
-- `src/components/landing/FAQ.tsx`
-- `src/components/landing/HowItWorks.tsx`
-- `src/components/landing/NewsletterSignup.tsx`
-- `src/components/landing/Footer.tsx`
-- `src/components/landing/ContactDialog.tsx`
-- `src/pages/About.tsx`
-- `src/pages/Properties.tsx`
-- `src/pages/MortgageCalculator.tsx`
+Se agregara una seccion entre "Why Work With Me" y el CTA final con:
+- Telefono: +1 305 490 2669 (enlace `tel:`)
+- Correo: elrealtoremilio@gmail.com (enlace `mailto:`)
+- Iconos y texto en ambos idiomas
+
+### 3. Footer actualizado
+
+- Privacy Policy enlaza a `/privacy`
+- Terms & Conditions enlaza a `/terms`
+- Contact abre el dialogo de contacto existente
+
+---
 
 ### Detalle tecnico
 
-**Estructura del diccionario (ejemplo):**
-```typescript
-// src/i18n/es.ts
-export const es = {
-  navbar: {
-    home: "Inicio",
-    properties: "Propiedades",
-    calculator: "Calculadora",
-    about: "Nosotros",
-    cta: "Habla con un Agente",
-  },
-  hero: {
-    headline: "Agente de Bienes Raices con Licencia en el Area de Austin",
-    description: "Te guio paso a paso en cada etapa...",
-  },
-  // ... demas secciones
-};
-```
+**Archivos a crear:**
+- `src/pages/PrivacyPolicy.tsx`
+- `src/pages/TermsConditions.tsx`
 
-**Hook de uso:**
-```typescript
-const { t, language, setLanguage } = useLanguage();
-// En componente:
-<h1>{t("hero.headline")}</h1>
-```
+**Archivos a modificar:**
+- `src/App.tsx` - agregar rutas `/privacy` y `/terms`
+- `src/i18n/en.ts` - traducciones para privacy, terms y seccion contacto en About
+- `src/i18n/es.ts` - traducciones para privacy, terms y seccion contacto en About
+- `src/pages/About.tsx` - agregar seccion de contacto directo
+- `src/components/landing/Footer.tsx` - conectar enlaces a rutas y dialogo
 
-**Selector en Navbar:**
-Un toggle simple EN/ES integrado en la barra de navegacion, visible en desktop y mobile.
+**Sin cambios en:**
+- `src/components/landing/ContactDialog.tsx` (se mantiene tal cual)
 
-### Notas
-- Los testimonios se traduciran al español ya que los originales fueron en español
-- Los datos de propiedades (titulos, descripciones) se mantendran en ingles ya que son nombres de direcciones y descripciones de listados
-- El idioma por defecto sera ingles
