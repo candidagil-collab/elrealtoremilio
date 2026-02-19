@@ -23,65 +23,65 @@ import {
 const services = [
   {
     icon: Home,
-    title: "Compra de vivienda principal",
+    title: "Primary Home Purchase",
     description:
-      "Te guío paso a paso si eres primer comprador o si estás cambiando de casa.",
+      "I guide you step by step whether you're a first-time buyer or looking to upgrade.",
   },
   {
     icon: MapPin,
-    title: "Compra de terrenos",
+    title: "Land Purchase",
     description:
-      "Te ayudo a evaluar ubicación, potencial y viabilidad antes de tomar una decisión.",
+      "I help you evaluate location, potential, and viability before making a decision.",
   },
   {
     icon: TrendingUp,
-    title: "Inversión inmobiliaria",
+    title: "Real Estate Investment",
     description:
-      "Analizamos números, proyección y estrategia para que tu compra tenga sentido financiero.",
+      "We analyze numbers, projections, and strategy so your purchase makes financial sense.",
   },
   {
     icon: Shield,
-    title: "Acompañamiento completo",
+    title: "Full-Service Support",
     description:
-      "Desde la preaprobación hasta el cierre, incluyendo negociación, inspección y revisión de contrato.",
+      "From pre-approval to closing, including negotiation, inspection, and contract review.",
   },
 ];
 
 const steps = [
   {
     icon: Phone,
-    title: "Llamada inicial",
-    description: "Conversamos sobre tus metas, presupuesto y tiempos.",
+    title: "Initial Call",
+    description: "We discuss your goals, budget, and timeline.",
   },
   {
     icon: ClipboardList,
-    title: "Plan estratégico",
-    description: "Definimos zonas, rango de precio y pasos financieros.",
+    title: "Strategic Plan",
+    description: "We define areas, price range, and financial steps.",
   },
   {
     icon: Search,
-    title: "Búsqueda y comparación",
-    description: "Evaluamos opciones con criterio, no con emoción.",
+    title: "Search & Compare",
+    description: "We evaluate options with criteria, not emotion.",
   },
   {
     icon: Handshake,
-    title: "Oferta y negociación",
+    title: "Offer & Negotiation",
     description:
-      "Te represento para proteger tus intereses y condiciones.",
+      "I represent you to protect your interests and conditions.",
   },
   {
     icon: CheckCircle,
-    title: "Cierre y seguimiento",
-    description: "Te acompaño hasta el día del cierre y más allá.",
+    title: "Closing & Follow-Up",
+    description: "I walk with you through closing day and beyond.",
   },
 ];
 
 const strengths = [
-  { icon: MessageSquare, text: "Comunicación clara en español" },
-  { icon: Wrench, text: "Experiencia en construcción que agrega una ventaja técnica" },
-  { icon: BarChart3, text: "Enfoque en decisiones basadas en números" },
-  { icon: Users, text: "Acompañamiento real durante todo el proceso" },
-  { icon: Eye, text: "Compromiso con la transparencia y la organización" },
+  { icon: MessageSquare, text: "Clear communication in English and Spanish" },
+  { icon: Wrench, text: "Construction experience that adds a technical edge" },
+  { icon: BarChart3, text: "Decisions driven by numbers, not emotion" },
+  { icon: Users, text: "Real support throughout the entire process" },
+  { icon: Eye, text: "Commitment to transparency and organization" },
 ];
 
 const About = () => {
@@ -110,16 +110,15 @@ const About = () => {
       <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-4">
         <div className="container mx-auto max-w-3xl text-center scroll-reveal">
           <span className="inline-block font-body text-sm tracking-widest uppercase text-primary mb-4">
-            Sobre Emilio
+            About Emilio
           </span>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
             Emilio Sanchez
           </h1>
           <p className="font-body text-lg md:text-xl text-muted-foreground leading-relaxed">
-            Realtor y constructor en el área de Austin. Trabajo con primeros
-            compradores, familias e inversionistas que quieren tomar decisiones
-            inteligentes, entender cada paso del proceso y proteger su inversión
-            desde el primer día.
+            Realtor and builder in the Austin area. I work with first-time buyers,
+            families, and investors who want to make smart decisions, understand
+            every step of the process, and protect their investment from day one.
           </p>
         </div>
       </section>
@@ -128,25 +127,24 @@ const About = () => {
       <section className="py-16 md:py-24 px-4 bg-secondary">
         <div className="container mx-auto max-w-3xl scroll-reveal">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-8">
-            Mi Historia
+            My Story
           </h2>
           <div className="space-y-6 font-body text-base md:text-lg text-muted-foreground leading-relaxed">
             <p>
-              Comprar una propiedad es una de las decisiones financieras más
-              importantes en la vida de una persona. Mi objetivo es que lo hagas
-              con información clara, expectativas realistas y una estrategia bien
-              definida.
+              Buying a property is one of the most important financial decisions
+              in a person's life. My goal is to help you do it with clear
+              information, realistic expectations, and a well-defined strategy.
             </p>
             <p>
-              Además de ser realtor, tengo experiencia en construcción, lo que me
-              permite evaluar detalles estructurales y aspectos técnicos que
-              muchas veces pasan desapercibidos. No solo te ayudo a encontrar una
-              propiedad, te ayudo a entenderla.
+              In addition to being a realtor, I have experience in construction,
+              which allows me to evaluate structural details and technical aspects
+              that often go unnoticed. I don't just help you find a property — I
+              help you understand it.
             </p>
             <p>
-              Trabajo principalmente en el área de Austin y sus alrededores,
-              acompañando a compradores hispanos que buscan orientación clara en
-              español y un proceso organizado de principio a fin.
+              I work primarily in the Austin area and surrounding communities,
+              guiding buyers who are looking for clear guidance and an organized
+              process from start to finish.
             </p>
           </div>
         </div>
@@ -157,7 +155,7 @@ const About = () => {
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-12 scroll-reveal">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Cómo Puedo Ayudarte
+              How I Can Help You
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -185,7 +183,7 @@ const About = () => {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12 scroll-reveal">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Mi Proceso de Trabajo
+              My Work Process
             </h2>
           </div>
           <div className="space-y-0">
@@ -221,7 +219,7 @@ const About = () => {
         <div className="container mx-auto max-w-3xl">
           <div className="text-center mb-12 scroll-reveal">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Por Qué Trabajar Conmigo
+              Why Work With Me
             </h2>
           </div>
           <ul className="space-y-5">
@@ -247,19 +245,19 @@ const About = () => {
       <section className="py-20 md:py-28 px-4 bg-primary">
         <div className="container mx-auto max-w-2xl text-center scroll-reveal">
           <h2 className="font-display text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            ¿Listo para dar el siguiente paso?
+            Ready to Take the Next Step?
           </h2>
           <p className="font-body text-primary-foreground/80 text-lg mb-8 leading-relaxed">
-            Si estás pensando en comprar casa o terreno en el área de Austin,
-            agenda una llamada y diseñemos tu plan de compra con claridad y
-            estrategia.
+            If you're thinking about buying a home or land in the Austin area,
+            schedule a call and let's build your buying plan with clarity and
+            strategy.
           </p>
           <ContactDialog>
             <Button
               size="lg"
               className="rounded-full bg-background text-foreground hover:bg-background/90 font-body text-base px-8 py-6"
             >
-              Agenda tu llamada hoy
+              Schedule Your Call Today
             </Button>
           </ContactDialog>
         </div>
