@@ -9,7 +9,7 @@ import { supabase } from "@/integrations/supabase/client";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
-  email: z.string().trim().email("Please enter a valid email").max(255),
+  phone: z.string().trim().min(7, "Please enter a valid phone number").max(20),
   message: z.string().trim().min(1, "Message is required").max(1000),
 });
 
@@ -21,14 +21,14 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
   const [open, setOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const result = contactSchema.safeParse({ name, email, message });
+    const result = contactSchema.safeParse({ name, phone, message });
     if (!result.success) {
       toast({
         title: "Validation Error",
@@ -42,7 +42,7 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
 
     const { error } = await supabase
       .from("contact_submissions")
-      .insert({ name: result.data.name, email: result.data.email, message: result.data.message });
+      .insert({ name: result.data.name, phone: result.data.phone, message: result.data.message });
 
     if (error) {
       toast({
@@ -60,7 +60,7 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
     });
 
     setName("");
-    setEmail("");
+    setPhone("");
     setMessage("");
     setIsLoading(false);
     setOpen(false);
@@ -88,10 +88,10 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
           </div>
           <div>
             <Input
-              type="email"
-              placeholder="Your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="tel"
+              placeholder="Your phone number"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
               className="font-body"
               disabled={isLoading}
             />
