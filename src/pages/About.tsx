@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/landing/Footer";
 import ContactDialog from "@/components/landing/ContactDialog";
 import { Button } from "@/components/ui/button";
-import { Home, MapPin, TrendingUp, Shield, Phone, ClipboardList, Search, Handshake, CheckCircle, MessageSquare, Wrench, BarChart3, Users, Eye } from "lucide-react";
+import { Home, MapPin, TrendingUp, Shield, Phone, ClipboardList, Search, Handshake, CheckCircle, MessageSquare, Wrench, BarChart3, Users, Eye, Mail } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const serviceIcons = [Home, MapPin, TrendingUp, Shield];
@@ -118,6 +118,34 @@ const About = () => {
               );
             })}
           </ul>
+        </div>
+      </section>
+
+      {/* Contact Info */}
+      <section className="py-16 md:py-24 px-4 bg-secondary">
+        <div className="container mx-auto max-w-3xl text-center scroll-reveal">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">{t("about.contactTitle")}</h2>
+          <p className="font-body text-muted-foreground text-lg mb-8">{t("about.contactDesc")}</p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <a href="tel:+13054902669" className="inline-flex items-center gap-3 bg-card border border-border rounded-2xl px-6 py-4 hover:shadow-lg transition-shadow">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <Phone className="w-5 h-5 text-primary" />
+              </div>
+              <div className="text-left">
+                <span className="block font-body text-sm text-muted-foreground">{t("about.contactPhone")}</span>
+                <span className="font-body font-semibold text-foreground">+1 305 490 2669</span>
+              </div>
+            </a>
+            <a href="mailto:elrealtoremilio@gmail.com" className="inline-flex items-center gap-3 bg-card border border-border rounded-2xl px-6 py-4 hover:shadow-lg transition-shadow">
+              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                <Mail className="w-5 h-5 text-primary" />
+              </div>
+              <div className="text-left">
+                <span className="block font-body text-sm text-muted-foreground">{t("about.contactEmail")}</span>
+                <span className="font-body font-semibold text-foreground">elrealtoremilio@gmail.com</span>
+              </div>
+            </a>
+          </div>
         </div>
       </section>
 
