@@ -40,12 +40,12 @@ const Navbar = () => {
           <Link to="/properties" className="font-body text-sm text-foreground hover:text-primary transition-colors">
             Properties
           </Link>
-          <a href="#proceso" className="font-body text-sm text-foreground hover:text-primary transition-colors">
-            About
-          </a>
           <Link to="/calculator" className="font-body text-sm text-foreground hover:text-primary transition-colors">
             Calculator
           </Link>
+          <a href="#proceso" className="font-body text-sm text-foreground hover:text-primary transition-colors">
+            About
+          </a>
         </nav>
 
         {/* CTA Button */}
