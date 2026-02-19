@@ -24,11 +24,13 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [honeypot, setHoneypot] = useState("");
   const { toast } = useToast();
   const { t } = useLanguage();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (honeypot) return; // Bot detected
     const result = contactSchema.safeParse({ name, phone, message });
     if (!result.success) {
       toast({ title: t("contactDialog.validationError"), description: result.error.errors[0].message, variant: "destructive" });
@@ -58,6 +60,9 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
           <DialogDescription className="font-body text-muted-foreground">{t("contactDialog.description")}</DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 mt-2">
+          <div className="absolute opacity-0 top-0 left-0 h-0 w-0 -z-10" aria-hidden="true" tabIndex={-1}>
+            <input type="text" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} autoComplete="off" tabIndex={-1} />
+          </div>
           <Input placeholder={t("contactDialog.namePlaceholder")} value={name} onChange={(e) => setName(e.target.value)} className="font-body" disabled={isLoading} />
           <Input type="tel" placeholder={t("contactDialog.phonePlaceholder")} value={phone} onChange={(e) => setPhone(e.target.value)} className="font-body" disabled={isLoading} />
           <Textarea placeholder={t("contactDialog.messagePlaceholder")} value={message} onChange={(e) => setMessage(e.target.value)} className="font-body min-h-[120px]" disabled={isLoading} />
