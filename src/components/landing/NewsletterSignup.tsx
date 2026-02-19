@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const subscribeSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100, "Name must be less than 100 characters"),
@@ -12,6 +13,7 @@ const subscribeSchema = z.object({
 });
 
 const NewsletterSignup = () => {
+  const { ref, isVisible } = useScrollReveal();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -66,7 +68,7 @@ const NewsletterSignup = () => {
 
   return (
     <section className="py-16 md:py-24 bg-primary">
-      <div className="container">
+      <div ref={ref} className={`container scroll-reveal ${isVisible ? "visible" : ""}`}>
         <div className="text-center max-w-3xl mx-auto">
           <p className="font-body text-sm tracking-widest text-primary-foreground/70 mb-4 uppercase">
             Need something different?

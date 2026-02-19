@@ -1,20 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 interface CTASectionProps {
   variant?: "primary" | "secondary";
 }
 
 const CTASection = ({ variant = "primary" }: CTASectionProps) => {
+  const { ref, isVisible } = useScrollReveal();
   const isPrimary = variant === "primary";
 
   return (
     <section
-      className={`py-16 md:py-20 ${
-        isPrimary ? "bg-primary" : "bg-secondary"
-      }`}
+      className={`py-16 md:py-20 ${isPrimary ? "bg-primary" : "bg-secondary"}`}
     >
-      <div className="container">
+      <div ref={ref} className={`container scroll-reveal ${isVisible ? "visible" : ""}`}>
         <div className="text-center max-w-3xl mx-auto">
           <h2
             className={`font-display text-3xl md:text-4xl font-semibold mb-6 ${
@@ -27,9 +27,7 @@ const CTASection = ({ variant = "primary" }: CTASectionProps) => {
           </h2>
           <p
             className={`font-body text-lg mb-8 ${
-              isPrimary
-                ? "text-primary-foreground/90"
-                : "text-muted-foreground"
+              isPrimary ? "text-primary-foreground/90" : "text-muted-foreground"
             }`}
           >
             {isPrimary

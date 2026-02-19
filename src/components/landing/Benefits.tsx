@@ -1,6 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Brain, DollarSign, Home } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+
 const Benefits = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   const benefits = [{
     icon: Brain,
     title: "Know exactly what's next",
@@ -14,8 +18,10 @@ const Benefits = () => {
     title: "Buy with confidence, not fear",
     description: "Make informed decisions with the confidence that you're doing the right thing for you and your family."
   }];
-  return <section className="py-16 md:py-24 bg-background">
-      <div className="container">
+
+  return (
+    <section className="py-16 md:py-24 bg-background">
+      <div ref={ref} className={`container scroll-reveal ${isVisible ? "visible" : ""}`}>
         <div className="text-center mb-12 md:mb-16">
           <h2 className="font-display text-3xl font-semibold mb-4 text-primary md:text-5xl">
             Why work with me?
@@ -26,9 +32,12 @@ const Benefits = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-          {benefits.map((benefit, index) => <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card group" style={{
-          animationDelay: `${index * 0.1}s`
-        }}>
+          {benefits.map((benefit, index) => (
+            <Card
+              key={index}
+              className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card group scroll-reveal-child"
+              style={{ transitionDelay: `${index * 0.15}s` }}
+            >
               <CardContent className="p-8">
                 <div className="mb-6 w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
                   <benefit.icon className="w-8 h-8 text-primary" />
@@ -40,9 +49,12 @@ const Benefits = () => {
                   {benefit.description}
                 </p>
               </CardContent>
-            </Card>)}
+            </Card>
+          ))}
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default Benefits;

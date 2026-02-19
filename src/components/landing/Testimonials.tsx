@@ -6,8 +6,11 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const Testimonials = () => {
+  const { ref, isVisible } = useScrollReveal();
+
   const testimonials = [
     {
       name: "Axel C.",
@@ -48,7 +51,7 @@ const Testimonials = () => {
 
   return (
     <section className="py-16 md:py-24 bg-secondary">
-      <div className="container">
+      <div ref={ref} className={`container scroll-reveal ${isVisible ? "visible" : ""}`}>
         <div className="text-center mb-12 md:mb-16">
           <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-4">
             What our clients say
