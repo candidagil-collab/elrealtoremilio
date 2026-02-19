@@ -23,7 +23,7 @@ export const properties: Property[] = [
     image: propertyElgin,
     title: "116 Pine Point Cv",
     description: "Beautiful stone and wood home with 10k Flex Cash incentive. Features elegant craftsmanship, spacious garage, and a lush green yard in a peaceful setting.",
-    bedrooms: 3,
+    bedrooms: 4,
     bathrooms: "2",
     location: "Elgin, TX",
     status: "Available",
