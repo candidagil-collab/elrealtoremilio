@@ -1,8 +1,8 @@
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/landing/Footer";
 import ContactDialog from "@/components/landing/ContactDialog";
 import { Button } from "@/components/ui/button";
-import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import {
   Home,
   MapPin,
@@ -85,7 +85,22 @@ const strengths = [
 ];
 
 const About = () => {
-  useScrollReveal();
+  useEffect(() => {
+    const elements = document.querySelectorAll(".scroll-reveal");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
+    );
+    elements.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
