@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { supabase } from "@/integrations/supabase/client";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
@@ -24,41 +25,23 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const { toast } = useToast();
+  const { t } = useLanguage();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     const result = contactSchema.safeParse({ name, phone, message });
     if (!result.success) {
-      toast({
-        title: "Validation Error",
-        description: result.error.errors[0].message,
-        variant: "destructive",
-      });
+      toast({ title: t("contactDialog.validationError"), description: result.error.errors[0].message, variant: "destructive" });
       return;
     }
-
     setIsLoading(true);
-
-    const { error } = await supabase
-      .from("contact_submissions")
-      .insert({ name: result.data.name, phone: result.data.phone, message: result.data.message });
-
+    const { error } = await supabase.from("contact_submissions").insert({ name: result.data.name, phone: result.data.phone, message: result.data.message });
     if (error) {
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
+      toast({ title: t("contactDialog.errorTitle"), description: t("contactDialog.errorDesc"), variant: "destructive" });
       setIsLoading(false);
       return;
     }
-
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you as soon as possible.",
-    });
-
+    toast({ title: t("contactDialog.successTitle"), description: t("contactDialog.successDesc") });
     setName("");
     setPhone("");
     setMessage("");
@@ -71,46 +54,15 @@ const ContactDialog = ({ children }: ContactDialogProps) => {
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="font-display text-2xl">Talk to an Agent</DialogTitle>
-          <DialogDescription className="font-body text-muted-foreground">
-            Leave your details and we'll contact you shortly.
-          </DialogDescription>
+          <DialogTitle className="font-display text-2xl">{t("contactDialog.title")}</DialogTitle>
+          <DialogDescription className="font-body text-muted-foreground">{t("contactDialog.description")}</DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 mt-2">
-          <div>
-            <Input
-              placeholder="Your name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className="font-body"
-              disabled={isLoading}
-            />
-          </div>
-          <div>
-            <Input
-              type="tel"
-              placeholder="Your phone number"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              className="font-body"
-              disabled={isLoading}
-            />
-          </div>
-          <div>
-            <Textarea
-              placeholder="How can we help you?"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className="font-body min-h-[120px]"
-              disabled={isLoading}
-            />
-          </div>
-          <Button
-            type="submit"
-            disabled={isLoading}
-            className="w-full font-body rounded-full bg-primary text-primary-foreground hover:bg-primary/90"
-          >
-            {isLoading ? "Sending..." : "Send Message"}
+          <Input placeholder={t("contactDialog.namePlaceholder")} value={name} onChange={(e) => setName(e.target.value)} className="font-body" disabled={isLoading} />
+          <Input type="tel" placeholder={t("contactDialog.phonePlaceholder")} value={phone} onChange={(e) => setPhone(e.target.value)} className="font-body" disabled={isLoading} />
+          <Textarea placeholder={t("contactDialog.messagePlaceholder")} value={message} onChange={(e) => setMessage(e.target.value)} className="font-body min-h-[120px]" disabled={isLoading} />
+          <Button type="submit" disabled={isLoading} className="w-full font-body rounded-full bg-primary text-primary-foreground hover:bg-primary/90">
+            {isLoading ? t("contactDialog.sending") : t("contactDialog.send")}
           </Button>
         </form>
       </DialogContent>
