@@ -19,10 +19,12 @@ const NewsletterSignup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (honeypot) return; // Bot detected
     const result = subscribeSchema.safeParse({ name, email });
     if (!result.success) {
       toast({ title: t("contactDialog.validationError"), description: result.error.errors[0].message, variant: "destructive" });
@@ -51,7 +53,10 @@ const NewsletterSignup = () => {
         <div className="text-center max-w-3xl mx-auto">
           <p className="font-body text-sm tracking-widest text-primary-foreground/70 mb-4 uppercase">{t("newsletter.label")}</p>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold text-primary-foreground mb-8">{t("newsletter.title")}</h2>
-          <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4 justify-center items-center max-w-2xl mx-auto mb-4">
+          <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-4 justify-center items-center max-w-2xl mx-auto mb-4 relative">
+            <div className="absolute opacity-0 top-0 left-0 h-0 w-0 -z-10" aria-hidden="true" tabIndex={-1}>
+              <input type="text" name="company" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} autoComplete="off" tabIndex={-1} />
+            </div>
             <Input type="text" placeholder={t("newsletter.namePlaceholder")} value={name} onChange={(e) => setName(e.target.value)} className="h-12 bg-primary-foreground text-foreground border-transparent rounded-lg px-4 md:flex-1 placeholder:text-muted-foreground" maxLength={100} />
             <Input type="email" placeholder={t("newsletter.emailPlaceholder")} value={email} onChange={(e) => setEmail(e.target.value)} className="h-12 bg-primary-foreground text-foreground border-transparent rounded-lg px-4 md:flex-1 placeholder:text-muted-foreground" maxLength={255} />
             <Button type="submit" disabled={isLoading} className="h-12 px-6 bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-full font-medium">
