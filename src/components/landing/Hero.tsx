@@ -9,6 +9,7 @@ import propertyGreinertDr from "@/assets/property-greinert-dr.jpeg";
 import propertySynergyDr from "@/assets/property-synergy-dr.jpeg";
 import propertyMichaelLn from "@/assets/property-michael-ln.jpeg";
 import propertyKailynneCt from "@/assets/property-kailynne-ct.jpeg";
+import { Link } from "react-router-dom";
 const properties = [{
   id: 1,
   image: propertyElgin,
@@ -86,9 +87,9 @@ const Hero = () => {
             <a href="#beneficios" className="font-body text-sm text-foreground hover:text-primary transition-colors">
               Home
             </a>
-            <a href="#testimonios" className="font-body text-sm text-foreground hover:text-primary transition-colors">
+            <Link to="/properties" className="font-body text-sm text-foreground hover:text-primary transition-colors">
               Properties
-            </a>
+            </Link>
             <a href="#proceso" className="font-body text-sm text-foreground hover:text-primary transition-colors">
               About
             </a>
