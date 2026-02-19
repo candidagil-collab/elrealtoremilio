@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import ContactDialog from "@/components/landing/ContactDialog";
 import { useState, useEffect, useCallback } from "react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
@@ -97,9 +98,11 @@ const Hero = () => {
           </nav>
 
           {/* CTA Button */}
-          <Button className="font-body text-sm px-5 py-2 h-auto rounded-full bg-foreground text-background hover:bg-foreground/90">
-            Talk to an Agent
-          </Button>
+          <ContactDialog>
+            <Button className="font-body text-sm px-5 py-2 h-auto rounded-full bg-foreground text-background hover:bg-foreground/90">
+              Talk to an Agent
+            </Button>
+          </ContactDialog>
         </div>
       </header>
 
