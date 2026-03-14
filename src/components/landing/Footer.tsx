@@ -17,6 +17,7 @@ const Footer = () => {
           <nav className="flex flex-wrap justify-center gap-6 mb-8">
             <Link to="/privacy" className="font-body text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">{t("footer.privacy")}</Link>
             <Link to="/terms" className="font-body text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">{t("footer.terms")}</Link>
+            <Link to="/cookies" className="font-body text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">{t("cookies.policyLink")}</Link>
             <ContactDialog>
               <button className="font-body text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">{t("footer.contact")}</button>
             </ContactDialog>
