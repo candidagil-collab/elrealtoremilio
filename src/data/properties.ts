@@ -45,6 +45,11 @@ import tayloeHouseBedroom4 from "@/assets/tayloe-house/bedroom-4.jpg";
 import tayloeHouseWalkInCloset from "@/assets/tayloe-house/walk-in-closet.jpg";
 import tayloeHouseBathroom4 from "@/assets/tayloe-house/bathroom-4.jpg";
 import tayloeHouseBackyard from "@/assets/tayloe-house/backyard.jpg";
+import tayloeHouseBackyard2 from "@/assets/tayloe-house/backyard-2.jpg";
+import tayloeHouseBackyard3 from "@/assets/tayloe-house/backyard-3.jpg";
+import tayloeHouseBackyard4 from "@/assets/tayloe-house/backyard-4.jpg";
+import tayloeHouseBackyard5 from "@/assets/tayloe-house/backyard-5.jpg";
+import tayloeHouseSideYard from "@/assets/tayloe-house/side-yard.jpg";
 
 export interface Property {
   id: number;
