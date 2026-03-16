@@ -5,6 +5,7 @@ import ContactDialog from "@/components/landing/ContactDialog";
 import { Button } from "@/components/ui/button";
 import { Home, MapPin, TrendingUp, Shield, Phone, ClipboardList, Search, Handshake, CheckCircle, MessageSquare, Wrench, BarChart3, Users, Eye, Mail } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 const serviceIcons = [Home, MapPin, TrendingUp, Shield];
 const stepIcons = [Phone, ClipboardList, Search, Handshake, CheckCircle];
@@ -30,7 +31,8 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-
+      <SchemaMarkup type="RealEstateAgent" />
+      <SchemaMarkup type="Person" />
       {/* Hero */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-4">
         <div className="container mx-auto max-w-3xl text-center scroll-reveal">
