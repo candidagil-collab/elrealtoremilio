@@ -24,6 +24,18 @@ import pinePointYardSide from "@/assets/pine-point/yard-side.jpg";
 import pinePointAerial from "@/assets/pine-point/aerial.jpg";
 import pinePointAerial2 from "@/assets/pine-point/aerial-2.jpg";
 
+// Tayloe House photos
+import tayloeHouseFront from "@/assets/tayloe-house/front.jpg";
+import tayloeHouseEntrance from "@/assets/tayloe-house/entrance.jpg";
+import tayloeHouseHallway from "@/assets/tayloe-house/hallway.jpg";
+import tayloeHouseLivingRoom from "@/assets/tayloe-house/living-room.jpg";
+import tayloeHouseLivingRoom2 from "@/assets/tayloe-house/living-room-2.jpg";
+import tayloeHouseLivingRoom3 from "@/assets/tayloe-house/living-room-3.jpg";
+import tayloeHouseKitchen from "@/assets/tayloe-house/kitchen.jpg";
+import tayloeHouseDining from "@/assets/tayloe-house/dining.jpg";
+import tayloeHouseDining2 from "@/assets/tayloe-house/dining-2.jpg";
+import tayloeHouseBedroom from "@/assets/tayloe-house/bedroom.jpg";
+
 export interface Property {
   id: number;
   slug: string;
