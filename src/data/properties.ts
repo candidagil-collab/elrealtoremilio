@@ -4,6 +4,18 @@ import propertySynergyDr from "@/assets/property-synergy-dr.jpeg";
 import propertyMichaelLn from "@/assets/property-michael-ln.jpeg";
 import propertyKailynneCt from "@/assets/property-kailynne-ct.jpeg";
 
+// Greinert Dr photos
+import greinertDrLivingKitchen from "@/assets/greinert-dr/living-kitchen.jpg";
+import greinertDrKitchen from "@/assets/greinert-dr/kitchen.jpg";
+import greinertDrHallway from "@/assets/greinert-dr/hallway.jpg";
+import greinertDrPantry from "@/assets/greinert-dr/pantry.jpg";
+import greinertDrHalfBath from "@/assets/greinert-dr/half-bath.jpg";
+import greinertDrStaircase from "@/assets/greinert-dr/staircase.jpg";
+import greinertDrUpstairsLanding from "@/assets/greinert-dr/upstairs-landing.jpg";
+import greinertDrLaundry from "@/assets/greinert-dr/laundry.jpg";
+import greinertDrLoft from "@/assets/greinert-dr/loft.jpg";
+import greinertDrBedroom from "@/assets/greinert-dr/bedroom.jpg";
+
 // Pine Point additional photos
 import pinePointHallway from "@/assets/pine-point/hallway.jpg";
 import pinePointLivingRoom from "@/assets/pine-point/living-room.jpg";
