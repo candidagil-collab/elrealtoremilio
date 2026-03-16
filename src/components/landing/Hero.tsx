@@ -1,36 +1,18 @@
-import { Button } from "@/components/ui/button";
 import { useState, useEffect, useCallback } from "react";
+import { Link } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Navbar from "@/components/Navbar";
-import propertyElgin from "@/assets/property-elgin.jpeg";
-import propertyGreinertDr from "@/assets/property-greinert-dr.jpeg";
-import propertySynergyDr from "@/assets/property-synergy-dr.jpeg";
-import propertyMichaelLn from "@/assets/property-michael-ln.jpeg";
-import propertyKailynneCt from "@/assets/property-kailynne-ct.jpeg";
+import { Badge } from "@/components/ui/badge";
+import { properties } from "@/data/properties";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-const properties = [{
-  id: 1, image: propertyElgin, title: "116 Pine Point Cv",
-  description: "Beautiful stone and wood home with 10k Flex Cash incentive. Features elegant craftsmanship, spacious garage, and a lush green yard in a peaceful setting.",
-  bedrooms: 4, bathrooms: "2"
-}, {
-  id: 2, image: propertyGreinertDr, title: "104 Greinert Dr",
-  description: "Brand-new home for rent! Located just 2 minutes from Walmart and H-E-B, less than 10 minutes from the Samsung plant in Taylor, and under 3 minutes from the elementary and middle school.",
-  bedrooms: 3, bathrooms: "2.5"
-}, {
-  id: 3, image: propertySynergyDr, title: "3.9 Acres Synergy Dr",
-  description: "Experience the allure of Texas countryside living with this remarkable 3.91-acre parcel nestled in the heart of Bastrop.",
-  bedrooms: null, bathrooms: null
-}, {
-  id: 4, image: propertyMichaelLn, title: "105 Michael Ln",
-  description: "105 Michael Ln (currently not for sale) is located in Frame Switch subdivision in Williamson County.",
-  bedrooms: null, bathrooms: null
-}, {
-  id: 5, image: propertyKailynneCt, title: "103 Kailynne Ct",
-  description: "103 Kailynne Ct (currently not for sale) is located in Country Meadows Estates subdivision in Milam County.",
-  bedrooms: null, bathrooms: null
-}];
+const statusColors: Record<string, string> = {
+  "For Sale": "bg-green-600 text-white",
+  "For Rent": "bg-blue-600 text-white",
+  "Sold": "bg-red-600 text-white",
+  "Not For Sale": "bg-muted text-muted-foreground",
+};
 
 const Hero = () => {
   const [api, setApi] = useState<CarouselApi>();
@@ -75,29 +57,40 @@ const Hero = () => {
           <CarouselContent className="-ml-4">
             {properties.map(property => (
               <CarouselItem key={property.id} className="pl-4 basis-[90vw] md:basis-[60vw] lg:basis-[50vw]">
-                <div className="relative aspect-[16/10] md:aspect-[16/9] rounded-xl overflow-hidden group cursor-pointer">
-                  {property.image ? (
-                    <img src={property.image} alt={property.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                  ) : (
-                    <div className="absolute inset-0 bg-gradient-to-br from-muted to-muted/50" />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                  <div className="absolute top-6 left-6">
-                    <span className="font-body text-xs md:text-sm tracking-widest text-white/90 uppercase">
-                      {t("hero.featuredListing")}
-                    </span>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
-                    <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium mb-3">{property.title}</h3>
-                    <p className="font-body text-sm md:text-base text-white/80 mb-4 line-clamp-2 max-w-xl">{property.description}</p>
-                    {property.bedrooms && property.bathrooms && (
-                      <p className="font-body text-sm md:text-base text-white/90">
-                        {property.bedrooms} {t("hero.bedrooms")} / {property.bathrooms} {t("hero.bathroom")}
-                      </p>
+                <Link to={`/property/${property.slug}`} className="block">
+                  <div className="relative aspect-[16/10] md:aspect-[16/9] rounded-xl overflow-hidden group cursor-pointer">
+                    {property.image ? (
+                      <img src={property.image} alt={property.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    ) : (
+                      <div className="absolute inset-0 bg-gradient-to-br from-muted to-muted/50" />
                     )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                    <div className="absolute top-6 left-6">
+                      {property.status && (
+                        <Badge className={`font-body text-xs md:text-sm px-3 py-1 ${statusColors[property.status] || "bg-muted text-muted-foreground"}`}>
+                          {property.status}
+                        </Badge>
+                      )}
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
+                      <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium mb-3">{property.title}</h3>
+                      <p className="font-body text-sm md:text-base text-white/80 mb-4 line-clamp-2 max-w-xl">{property.description}</p>
+                      <div className="flex items-center gap-4">
+                        {property.price && (
+                          <span className="font-display text-xl md:text-2xl font-bold text-white">
+                            ${property.price.toLocaleString()}
+                          </span>
+                        )}
+                        {property.bedrooms && property.bathrooms && (
+                          <span className="font-body text-sm md:text-base text-white/90">
+                            {property.bedrooms} {t("hero.bedrooms")} / {property.bathrooms} {t("hero.bathroom")}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300" />
                   </div>
-                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/5 transition-colors duration-300 rounded-none opacity-0" />
-                </div>
+                </Link>
               </CarouselItem>
             ))}
           </CarouselContent>

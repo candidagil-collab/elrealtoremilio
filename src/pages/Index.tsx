@@ -8,41 +8,48 @@ import Testimonials from "@/components/landing/Testimonials";
 import FAQ from "@/components/landing/FAQ";
 import HowItWorks from "@/components/landing/HowItWorks";
 import Footer from "@/components/landing/Footer";
+import ResultsMetrics from "@/components/landing/ResultsMetrics";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 const Index = () => {
   return (
     <main className="min-h-screen">
+      <SchemaMarkup type="RealEstateAgent" />
+
       {/* 1. Hero Section */}
       <Hero />
 
       {/* 2. Authority Bar */}
       <AuthorityBar />
 
-      {/* 3. Benefits Section */}
+      {/* 3. Results Metrics */}
+      <ResultsMetrics />
+
+      {/* 4. Benefits Section */}
       <Benefits />
 
-      {/* 4. CTA Intermedio */}
+      {/* 5. CTA Intermedio */}
       <CTASection variant="primary" />
 
-      {/* 5. Video Showcase */}
+      {/* 6. Video Showcase */}
       <VideoShowcase />
 
-      {/* 6. Testimonials */}
+      {/* 7. Testimonials */}
       <Testimonials />
 
-      {/* 7. FAQ */}
+      {/* 8. FAQ */}
       <FAQ />
 
-      {/* 8. How It Works */}
+      {/* 9. How It Works */}
       <HowItWorks />
 
-      {/* 9. Final CTA */}
+      {/* 10. Final CTA */}
       <CTASection variant="secondary" />
 
-      {/* 10. Newsletter Signup */}
+      {/* 11. Newsletter Signup */}
       <NewsletterSignup />
       
-      {/* 11. Footer */}
+      {/* 12. Footer */}
       <Footer />
     </main>
   );

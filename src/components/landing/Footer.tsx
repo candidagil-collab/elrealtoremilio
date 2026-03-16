@@ -22,6 +22,26 @@ const Footer = () => {
               <button className="font-body text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors">{t("footer.contact")}</button>
             </ContactDialog>
           </nav>
+
+          {/* Affiliation Logos */}
+          <div className="mb-8">
+            <p className="font-body text-xs text-primary-foreground/50 uppercase tracking-widest mb-4">{t("footer.affiliations")}</p>
+            <div className="flex flex-wrap items-center justify-center gap-8">
+              <div className="flex flex-col items-center gap-1">
+                <span className="font-display text-lg font-bold text-primary-foreground/70">NAR</span>
+                <span className="font-body text-[10px] text-primary-foreground/50">National Association<br/>of REALTORS®</span>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <span className="font-display text-lg font-bold text-primary-foreground/70">TAR</span>
+                <span className="font-body text-[10px] text-primary-foreground/50">Texas<br/>REALTORS®</span>
+              </div>
+              <div className="flex flex-col items-center gap-1">
+                <span className="font-display text-lg font-bold text-primary-foreground/70">ABoR</span>
+                <span className="font-body text-[10px] text-primary-foreground/50">Austin Board<br/>of REALTORS®</span>
+              </div>
+            </div>
+          </div>
+
           <p className="font-body text-sm text-primary-foreground/60">
             © {currentYear} Emilio Sanchez Real Estate. {t("footer.rights")}
           </p>

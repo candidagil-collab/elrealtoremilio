@@ -7,6 +7,7 @@ import { LanguageProvider } from "./contexts/LanguageContext";
 import CookieConsent from "./components/CookieConsent";
 import Index from "./pages/Index";
 import Properties from "./pages/Properties";
+import PropertyDetail from "./pages/PropertyDetail";
 import MortgageCalculator from "./pages/MortgageCalculator";
 import About from "./pages/About";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -26,6 +27,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/properties" element={<Properties />} />
+            <Route path="/property/:slug" element={<PropertyDetail />} />
             <Route path="/calculator" element={<MortgageCalculator />} />
             <Route path="/about" element={<About />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
