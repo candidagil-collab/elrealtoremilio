@@ -14,6 +14,15 @@ import pinePointMasterBedroom from "@/assets/pine-point/master-bedroom.jpg";
 import pinePointBathroom from "@/assets/pine-point/bathroom.jpg";
 import pinePointWalkInCloset from "@/assets/pine-point/walk-in-closet.jpg";
 import pinePointBedroom from "@/assets/pine-point/bedroom.jpg";
+import pinePointBedroom2 from "@/assets/pine-point/bedroom-2.jpg";
+import pinePointBathroom2 from "@/assets/pine-point/bathroom-2.jpg";
+import pinePointBedroom3 from "@/assets/pine-point/bedroom-3.jpg";
+import pinePointGarage from "@/assets/pine-point/garage.jpg";
+import pinePointPorch from "@/assets/pine-point/porch.jpg";
+import pinePointYard from "@/assets/pine-point/yard.jpg";
+import pinePointYardSide from "@/assets/pine-point/yard-side.jpg";
+import pinePointAerial from "@/assets/pine-point/aerial.jpg";
+import pinePointAerial2 from "@/assets/pine-point/aerial-2.jpg";
 
 export interface Property {
   id: number;
@@ -56,6 +65,15 @@ export const properties: Property[] = [
       pinePointBathroom,
       pinePointWalkInCloset,
       pinePointBedroom,
+      pinePointBedroom2,
+      pinePointBathroom2,
+      pinePointBedroom3,
+      pinePointGarage,
+      pinePointPorch,
+      pinePointYard,
+      pinePointYardSide,
+      pinePointAerial,
+      pinePointAerial2,
     ],
     title: "116 Pine Point Cv",
     description: "Stunning new construction home on a full 1-acre lot in a quiet gated community. Energy-efficient with spray foam insulation, modern finishes, and all appliances included.",
