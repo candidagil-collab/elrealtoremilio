@@ -1,6 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 const FAQ = () => {
   const { ref, isVisible } = useScrollReveal();
@@ -8,8 +9,22 @@ const FAQ = () => {
 
   const faqs = t("faq.items") as Array<{ question: string; answer: string }>;
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
   return (
     <section className="py-16 md:py-24 bg-background">
+      <SchemaMarkup type="FAQPage" data={faqSchema} />
       <div ref={ref} className={`container scroll-reveal ${isVisible ? "visible" : ""}`}>
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">

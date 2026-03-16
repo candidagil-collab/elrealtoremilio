@@ -31,7 +31,8 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-
+      <SchemaMarkup type="RealEstateAgent" />
+      <SchemaMarkup type="Person" />
       {/* Hero */}
       <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-4">
         <div className="container mx-auto max-w-3xl text-center scroll-reveal">
