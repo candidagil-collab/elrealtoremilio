@@ -45,6 +45,11 @@ import tayloeHouseBedroom4 from "@/assets/tayloe-house/bedroom-4.jpg";
 import tayloeHouseWalkInCloset from "@/assets/tayloe-house/walk-in-closet.jpg";
 import tayloeHouseBathroom4 from "@/assets/tayloe-house/bathroom-4.jpg";
 import tayloeHouseBackyard from "@/assets/tayloe-house/backyard.jpg";
+import tayloeHouseBackyard2 from "@/assets/tayloe-house/backyard-2.jpg";
+import tayloeHouseBackyard3 from "@/assets/tayloe-house/backyard-3.jpg";
+import tayloeHouseBackyard4 from "@/assets/tayloe-house/backyard-4.jpg";
+import tayloeHouseBackyard5 from "@/assets/tayloe-house/backyard-5.jpg";
+import tayloeHouseSideYard from "@/assets/tayloe-house/side-yard.jpg";
 
 export interface Property {
   id: number;
@@ -168,6 +173,11 @@ export const properties: Property[] = [
       tayloeHouseLaundry,
       tayloeHouseWalkInCloset,
       tayloeHouseBackyard,
+      tayloeHouseBackyard2,
+      tayloeHouseBackyard3,
+      tayloeHouseBackyard4,
+      tayloeHouseBackyard5,
+      tayloeHouseSideYard,
     ],
     title: "23915 Tayloe House Ln",
     description: "Charming 3-bedroom home with numerous updates in highly regarded Katy ISD. Freshly painted interior/exterior, laminate wood flooring, Silestone countertops, and energy-efficient double-pane windows.",
