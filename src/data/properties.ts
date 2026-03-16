@@ -35,6 +35,16 @@ import tayloeHouseKitchen from "@/assets/tayloe-house/kitchen.jpg";
 import tayloeHouseDining from "@/assets/tayloe-house/dining.jpg";
 import tayloeHouseDining2 from "@/assets/tayloe-house/dining-2.jpg";
 import tayloeHouseBedroom from "@/assets/tayloe-house/bedroom.jpg";
+import tayloeHouseBedroom2 from "@/assets/tayloe-house/bedroom-2.jpg";
+import tayloeHouseBathroom2 from "@/assets/tayloe-house/bathroom-2.jpg";
+import tayloeHouseBathroom3 from "@/assets/tayloe-house/bathroom-3.jpg";
+import tayloeHouseBedroom3 from "@/assets/tayloe-house/bedroom-3.jpg";
+import tayloeHouseLaundry from "@/assets/tayloe-house/laundry.jpg";
+import tayloeHouseHallway2 from "@/assets/tayloe-house/hallway-2.jpg";
+import tayloeHouseBedroom4 from "@/assets/tayloe-house/bedroom-4.jpg";
+import tayloeHouseWalkInCloset from "@/assets/tayloe-house/walk-in-closet.jpg";
+import tayloeHouseBathroom4 from "@/assets/tayloe-house/bathroom-4.jpg";
+import tayloeHouseBackyard from "@/assets/tayloe-house/backyard.jpg";
 
 export interface Property {
   id: number;
@@ -141,6 +151,7 @@ export const properties: Property[] = [
       tayloeHouseFront,
       tayloeHouseEntrance,
       tayloeHouseHallway,
+      tayloeHouseHallway2,
       tayloeHouseLivingRoom,
       tayloeHouseLivingRoom2,
       tayloeHouseLivingRoom3,
@@ -148,6 +159,15 @@ export const properties: Property[] = [
       tayloeHouseDining,
       tayloeHouseDining2,
       tayloeHouseBedroom,
+      tayloeHouseBedroom2,
+      tayloeHouseBedroom3,
+      tayloeHouseBedroom4,
+      tayloeHouseBathroom2,
+      tayloeHouseBathroom3,
+      tayloeHouseBathroom4,
+      tayloeHouseLaundry,
+      tayloeHouseWalkInCloset,
+      tayloeHouseBackyard,
     ],
     title: "23915 Tayloe House Ln",
     description: "Charming 3-bedroom home with numerous updates in highly regarded Katy ISD. Freshly painted interior/exterior, laminate wood flooring, Silestone countertops, and energy-efficient double-pane windows.",
