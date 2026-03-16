@@ -24,6 +24,18 @@ import pinePointYardSide from "@/assets/pine-point/yard-side.jpg";
 import pinePointAerial from "@/assets/pine-point/aerial.jpg";
 import pinePointAerial2 from "@/assets/pine-point/aerial-2.jpg";
 
+// Tayloe House photos
+import tayloeHouseFront from "@/assets/tayloe-house/front.jpg";
+import tayloeHouseEntrance from "@/assets/tayloe-house/entrance.jpg";
+import tayloeHouseHallway from "@/assets/tayloe-house/hallway.jpg";
+import tayloeHouseLivingRoom from "@/assets/tayloe-house/living-room.jpg";
+import tayloeHouseLivingRoom2 from "@/assets/tayloe-house/living-room-2.jpg";
+import tayloeHouseLivingRoom3 from "@/assets/tayloe-house/living-room-3.jpg";
+import tayloeHouseKitchen from "@/assets/tayloe-house/kitchen.jpg";
+import tayloeHouseDining from "@/assets/tayloe-house/dining.jpg";
+import tayloeHouseDining2 from "@/assets/tayloe-house/dining-2.jpg";
+import tayloeHouseBedroom from "@/assets/tayloe-house/bedroom.jpg";
+
 export interface Property {
   id: number;
   slug: string;
@@ -119,6 +131,59 @@ export const properties: Property[] = [
       "Utility": "Electricity Connected, Water Connected",
       "Front Door Face": "East",
       "Exterior Features": "Lighting, Private Yard",
+    },
+  },
+  {
+    id: 6,
+    slug: "23915-tayloe-house-ln",
+    image: tayloeHouseFront,
+    images: [
+      tayloeHouseFront,
+      tayloeHouseEntrance,
+      tayloeHouseHallway,
+      tayloeHouseLivingRoom,
+      tayloeHouseLivingRoom2,
+      tayloeHouseLivingRoom3,
+      tayloeHouseKitchen,
+      tayloeHouseDining,
+      tayloeHouseDining2,
+      tayloeHouseBedroom,
+    ],
+    title: "23915 Tayloe House Ln",
+    description: "Charming 3-bedroom home with numerous updates in highly regarded Katy ISD. Freshly painted interior/exterior, laminate wood flooring, Silestone countertops, and energy-efficient double-pane windows.",
+    fullDescription: "You'll fall in love with this charming 3-bedroom home with numerous updates. The interior and exterior have been freshly painted, and the home features attractive laminate wood flooring in the main living areas. Energy-efficient insulated double-pane windows help improve comfort and efficiency. The kitchen showcases beautiful Silestone countertops, and the covered back porch is perfect for relaxing or entertaining. Major appliances convey, including refrigerator, dishwasher, microwave, range, washer, and dryer (per seller). Conveniently located in highly regarded Katy ISD, within walking distance to the elementary school and a large community park. Per seller, garage conversion currently used as bedroom; buyer to verify. Per seller, a second bathroom was added in the attic access area without permits and without structural slab modifications; buyer to independently verify all information and permitting requirements. This is one you don't want to miss!",
+    bedrooms: 3,
+    bathrooms: "2",
+    location: "Katy, TX 77493",
+    sqft: 1200,
+    lotAcres: 0.14,
+    price: 227900,
+    yearBuilt: 1982,
+    propertyType: "Single-Family",
+    maintenanceFee: "$486 / Annually",
+    status: "For Sale",
+    highlights: [
+      "Katy ISD",
+      "Freshly Painted",
+      "Silestone Countertops",
+      "Double-Pane Windows",
+      "All Appliances Included",
+      "Walking Distance to School & Park",
+    ],
+    interior: {
+      "Countertop": "Silestone (Quartz)",
+      "Cooling": "Central Electric",
+      "Heating": "Central Electric",
+      "Appliances": "Dishwasher, Disposal, Microwave, Refrigerator, Range, Washer, Dryer",
+    },
+    exterior: {
+      "Roof": "Composition",
+      "Foundation": "Slab",
+      "Private Pool": "No",
+      "Exterior Type": "Brick",
+      "Lot Description": "Subdivision Lot",
+      "Water/Sewer": "Public Sewer, Public Water",
+      "Exterior Features": "Back Yard",
     },
   },
   {
