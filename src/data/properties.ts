@@ -86,6 +86,8 @@ export interface Property {
   highlights?: string[];
   interior?: Record<string, string>;
   exterior?: Record<string, string>;
+  rentPrice?: number;
+  lotSqft?: number;
 }
 
 export const properties: Property[] = [
