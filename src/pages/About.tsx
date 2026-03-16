@@ -5,6 +5,7 @@ import ContactDialog from "@/components/landing/ContactDialog";
 import { Button } from "@/components/ui/button";
 import { Home, MapPin, TrendingUp, Shield, Phone, ClipboardList, Search, Handshake, CheckCircle, MessageSquare, Wrench, BarChart3, Users, Eye, Mail } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SchemaMarkup from "@/components/SchemaMarkup";
 
 const serviceIcons = [Home, MapPin, TrendingUp, Shield];
 const stepIcons = [Phone, ClipboardList, Search, Handshake, CheckCircle];
