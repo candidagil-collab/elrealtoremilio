@@ -95,6 +95,13 @@ export const en = {
     terms: "Terms & Conditions",
     contact: "Contact",
     rights: "All rights reserved.",
+    affiliations: "Member of",
+  },
+  results: {
+    title: "Proven Track Record",
+    families: "Families Advised",
+    satisfaction: "Client Satisfaction",
+    transactions: "Transactions Experience",
   },
   contactDialog: {
     title: "Talk to an Agent",

@@ -97,6 +97,13 @@ export const es: Translations = {
     terms: "Términos y Condiciones",
     contact: "Contacto",
     rights: "Todos los derechos reservados.",
+    affiliations: "Miembro de",
+  },
+  results: {
+    title: "Resultados Comprobados",
+    families: "Familias Asesoradas",
+    satisfaction: "Clientes Satisfechos",
+    transactions: "Experiencia en Transacciones",
   },
   contactDialog: {
     title: "Habla con un Agente",
