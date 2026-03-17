@@ -15,6 +15,16 @@ import greinertDrUpstairsLanding from "@/assets/greinert-dr/upstairs-landing.jpg
 import greinertDrLaundry from "@/assets/greinert-dr/laundry.jpg";
 import greinertDrLoft from "@/assets/greinert-dr/loft.jpg";
 import greinertDrBedroom from "@/assets/greinert-dr/bedroom.jpg";
+import greinertDrMasterBedroom from "@/assets/greinert-dr/master-bedroom.jpg";
+import greinertDrWalkInCloset from "@/assets/greinert-dr/walk-in-closet.jpg";
+import greinertDrMasterBath from "@/assets/greinert-dr/master-bath.jpg";
+import greinertDrBathroom2 from "@/assets/greinert-dr/bathroom-2.jpg";
+import greinertDrUpstairsHallway from "@/assets/greinert-dr/upstairs-hallway.jpg";
+import greinertDrBathroom3 from "@/assets/greinert-dr/bathroom-3.jpg";
+import greinertDrBedroom2 from "@/assets/greinert-dr/bedroom-2.jpg";
+import greinertDrBedroom3 from "@/assets/greinert-dr/bedroom-3.jpg";
+import greinertDrGarage from "@/assets/greinert-dr/garage.jpg";
+import greinertDrGarage2 from "@/assets/greinert-dr/garage-2.jpg";
 
 // Pine Point additional photos
 import pinePointHallway from "@/assets/pine-point/hallway.jpg";
@@ -246,6 +256,16 @@ export const properties: Property[] = [
       greinertDrLaundry,
       greinertDrLoft,
       greinertDrBedroom,
+      greinertDrMasterBedroom,
+      greinertDrWalkInCloset,
+      greinertDrMasterBath,
+      greinertDrBathroom2,
+      greinertDrUpstairsHallway,
+      greinertDrBathroom3,
+      greinertDrBedroom2,
+      greinertDrBedroom3,
+      greinertDrGarage,
+      greinertDrGarage2,
     ],
     title: "104 Greinert Dr",
     description: "Brand-new home for rent! Located just 2 minutes from Walmart and H-E-B, less than 10 minutes from the Samsung plant in Taylor, and under 3 minutes from the elementary and middle school.",
