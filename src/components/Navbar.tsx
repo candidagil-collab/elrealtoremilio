@@ -27,6 +27,7 @@ const Navbar = () => {
   const navLinks = [
     { to: "/", label: t("navbar.home") },
     { to: "/properties", label: t("navbar.properties") },
+    { to: "/neighborhoods", label: t("navbar.neighborhoods") },
     { to: "/calculator", label: t("navbar.calculator") },
     { to: "/about", label: t("navbar.about") },
   ];

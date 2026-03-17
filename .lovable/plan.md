@@ -1,38 +1,54 @@
 
 
-## Plan: Neighborhood Pages with Placeholder Images
+## Paginas legales, contacto en About y Footer actualizado
 
-### New Files
+### 1. Paginas Privacy Policy y Terms & Conditions
 
-1. **`src/data/neighborhoods.ts`** — Data for Hutto, Round Rock, Pflugerville, Taylor. Each entry: slug, name, city, heroImage (using Unsplash placeholder URLs), lifestyle description (i18n keys), market stats (median price, population, growth), schools array, highlights. Properties will be filtered by matching city in `property.location`.
+Se crearan dos paginas bilingues (EN/ES):
 
-2. **`src/pages/Neighborhoods.tsx`** — Grid of 4 neighborhood cards linking to `/neighborhoods/:slug`. Each card shows placeholder hero image, name, median price, and a brief tagline.
+**Privacy Policy** (`/privacy`):
+- Datos recopilados (nombre, telefono, mensaje)
+- Uso de la informacion (responder consultas)
+- No se comparten con terceros
+- Contacto: +1 305 490 2669 / elrealtoremilio@gmail.com
+- Derechos del usuario
 
-3. **`src/pages/NeighborhoodDetail.tsx`** — Dynamic page with:
-   - Hero banner (placeholder image + neighborhood name overlay)
-   - Lifestyle description section
-   - Market data grid (median price, population, days on market, YoY growth)
-   - Schools table (name, type, rating)
-   - Active listings section (filtered from existing `properties` by city match)
-   - CTA to contact Emilio
+**Terms & Conditions** (`/terms`):
+- Uso informativo del sitio
+- Propiedades no constituyen oferta vinculante
+- Limitacion de responsabilidad
+- Contacto
 
-### Modified Files
+Ambas con Navbar + Footer y traducciones completas.
 
-4. **`src/App.tsx`** — Add routes `/neighborhoods` and `/neighborhoods/:slug`
+### 2. Seccion de contacto en About
 
-5. **`src/components/Navbar.tsx`** — Add "Neighborhoods" nav link
+Se agregara una seccion entre "Why Work With Me" y el CTA final con:
+- Telefono: +1 305 490 2669 (enlace `tel:`)
+- Correo: elrealtoremilio@gmail.com (enlace `mailto:`)
+- Iconos y texto en ambos idiomas
 
-6. **`src/i18n/en.ts`** and **`src/i18n/es.ts`** — Add neighborhood translation keys (navbar label, page titles, section headers, all 4 neighborhood descriptions)
+### 3. Footer actualizado
 
-### Placeholder Images
-Will use high-quality Unsplash URLs for each neighborhood hero (Texas suburban/aerial shots). These can be swapped later with real photos by updating `src/data/neighborhoods.ts`.
+- Privacy Policy enlaza a `/privacy`
+- Terms & Conditions enlaza a `/terms`
+- Contact abre el dialogo de contacto existente
 
-### Market Data (Hardcoded)
+---
 
-| Area | Median Price | Population | Highlights |
-|------|-------------|------------|------------|
-| Hutto | ~$350K | ~45K | Samsung nearby, family-friendly |
-| Round Rock | ~$425K | ~130K | Dell HQ, top schools |
-| Pflugerville | ~$400K | ~75K | Lake Pflugerville, tech corridor |
-| Taylor | ~$320K | ~20K | Historic downtown, Samsung campus |
+### Detalle tecnico
+
+**Archivos a crear:**
+- `src/pages/PrivacyPolicy.tsx`
+- `src/pages/TermsConditions.tsx`
+
+**Archivos a modificar:**
+- `src/App.tsx` - agregar rutas `/privacy` y `/terms`
+- `src/i18n/en.ts` - traducciones para privacy, terms y seccion contacto en About
+- `src/i18n/es.ts` - traducciones para privacy, terms y seccion contacto en About
+- `src/pages/About.tsx` - agregar seccion de contacto directo
+- `src/components/landing/Footer.tsx` - conectar enlaces a rutas y dialogo
+
+**Sin cambios en:**
+- `src/components/landing/ContactDialog.tsx` (se mantiene tal cual)
 

@@ -13,6 +13,8 @@ import About from "./pages/About";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 import CookiePolicy from "./pages/CookiePolicy";
+import Neighborhoods from "./pages/Neighborhoods";
+import NeighborhoodDetail from "./pages/NeighborhoodDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +30,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/properties" element={<Properties />} />
             <Route path="/property/:slug" element={<PropertyDetail />} />
+            <Route path="/neighborhoods" element={<Neighborhoods />} />
+            <Route path="/neighborhoods/:slug" element={<NeighborhoodDetail />} />
             <Route path="/calculator" element={<MortgageCalculator />} />
             <Route path="/about" element={<About />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
