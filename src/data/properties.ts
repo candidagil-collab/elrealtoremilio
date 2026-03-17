@@ -86,6 +86,18 @@ import michaelLnGround5 from "@/assets/michael-ln/ground-5.jpg";
 import michaelLnGround6 from "@/assets/michael-ln/ground-6.jpg";
 import michaelLnGround7 from "@/assets/michael-ln/ground-7.jpg";
 
+// Synergy Dr photos
+import synergyDrLand1 from "@/assets/synergy-dr/land-1.jpg";
+import synergyDrLand2 from "@/assets/synergy-dr/land-2.jpg";
+import synergyDrLand3 from "@/assets/synergy-dr/land-3.jpg";
+import synergyDrLand4 from "@/assets/synergy-dr/land-4.jpg";
+import synergyDrLand5 from "@/assets/synergy-dr/land-5.jpg";
+import synergyDrLand6 from "@/assets/synergy-dr/land-6.jpg";
+import synergyDrLand7 from "@/assets/synergy-dr/land-7.jpg";
+import synergyDrLand8 from "@/assets/synergy-dr/land-8.jpg";
+import synergyDrLand9 from "@/assets/synergy-dr/land-9.jpg";
+import synergyDrLand10 from "@/assets/synergy-dr/land-10.jpg";
+
 export interface Property {
   id: number;
   slug: string;
