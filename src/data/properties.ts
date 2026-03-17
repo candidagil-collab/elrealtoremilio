@@ -282,7 +282,7 @@ export const properties: Property[] = [
     id: 3,
     slug: "3-9-acres-synergy-dr",
     image: propertySynergyDr,
-    images: [propertySynergyDr, synergyDrLand1, synergyDrLand2, synergyDrLand3, synergyDrLand4, synergyDrLand5, synergyDrLand6, synergyDrLand7, synergyDrLand8, synergyDrLand9, synergyDrLand10],
+    images: [propertySynergyDr, synergyDrStructure1, synergyDrStructure2, synergyDrLand1, synergyDrLand2, synergyDrLand3, synergyDrLand4, synergyDrLand5, synergyDrLand6, synergyDrLand7, synergyDrLand8, synergyDrLand9, synergyDrLand10, synergyDrArea1, synergyDrArea2, synergyDrArea3, synergyDrArea4, synergyDrArea5, synergyDrArea6, synergyDrArea7, synergyDrArea8],
     title: "3.9 Acres Synergy Dr",
     description: "Experience the allure of Texas countryside living with this remarkable 3.91-acre parcel nestled in the heart of Bastrop. Includes a 40x60 sq ft metal structure.",
     fullDescription: "Experience the allure of Texas countryside living with this remarkable 3.91-acre parcel nestled in the heart of Bastrop. Encompassing expansive vistas and natural beauty, this generous piece of land offers endless possibilities. There is a 40 x 60 sq ft metal structure that can be used for a garage, house, or any other use the buyer desires. Whether you're seeking a serene escape from the city or a place to craft your forever home, this 3.91-acre property presents an extraordinary opportunity. Embrace the freedom to design your own sanctuary and embark on a journey of rural living, all while being just 15 minutes away from Bastrop's charm. Perfect rural setting. Mobile Homes not allowed. Don't miss the chance to make this land your canvas for a life well-lived.",
