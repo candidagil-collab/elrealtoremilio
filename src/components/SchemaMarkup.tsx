@@ -1,6 +1,7 @@
-interface SchemaMarkupProps {
-  type: "RealEstateAgent" | "Person" | "FAQPage";
+export interface SchemaMarkupProps {
+  type?: "RealEstateAgent" | "Person" | "FAQPage";
   data?: Record<string, unknown>;
+  schema?: Record<string, unknown>;
 }
 
 const realEstateAgentSchema = {
