@@ -314,6 +314,20 @@ export const es: Translations = {
       lifestyleDesc: "Taylor está experimentando un renacimiento impulsado por el campus de semiconductores de Samsung y una ola de nuevo desarrollo. Esta ciudad histórica ofrece casas asequibles, un centro revitalizado con restaurantes y tiendas locales, y un sentido comunitario estrecho. Taylor representa una de las mejores oportunidades de valor en el área de Austin.",
     },
   },
+  blog: {
+    label: "Blog",
+    title: "Blog",
+    subtitle: "Consejos, guías y análisis del mercado para ayudarte a tomar mejores decisiones inmobiliarias",
+    searchPlaceholder: "Buscar artículos...",
+    allCategories: "Todos",
+    noPosts: "No se encontraron artículos.",
+    readMore: "Leer más",
+    backToBlog: "Volver al Blog",
+    notFound: "Artículo no encontrado",
+    ctaTitle: "¿Tienes Preguntas Sobre Bienes Raíces?",
+    ctaDesc: "Hablemos sobre tus metas y encontremos el mejor camino.",
+    ctaButton: "Habla con un Agente",
+  },
   highlights: {
     hutto: {
       samsung: "A minutos del campus de semiconductores de Samsung ($17B)",
