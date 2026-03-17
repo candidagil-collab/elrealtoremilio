@@ -127,8 +127,21 @@ const MortgageCalculator = () => {
                     </div>
                   </div>
                   <div className="space-y-2">
-                    <Label className="font-body text-sm">{t("calculator.annualPropertyTax")}</Label>
-                    <Input type="number" value={propertyTax} onChange={(e) => setPropertyTax(Number(e.target.value))} className="font-body" />
+                    <div className="flex justify-between items-center">
+                      <Label className="font-body text-sm">{t("calculator.annualPropertyTax")}</Label>
+                      <div className="flex rounded-lg overflow-hidden border">
+                        <button onClick={() => { setPropertyTaxMode("dollar"); }} className={`px-2 py-1 text-xs font-body font-medium transition-colors ${propertyTaxMode === "dollar" ? "bg-primary text-primary-foreground" : "bg-secondary text-foreground hover:bg-secondary/80"}`}>$</button>
+                        <button onClick={() => { setPropertyTaxMode("percent"); setPropertyTaxPercent(Number(((propertyTax / homePrice) * 100).toFixed(3))); }} className={`px-2 py-1 text-xs font-body font-medium transition-colors ${propertyTaxMode === "percent" ? "bg-primary text-primary-foreground" : "bg-secondary text-foreground hover:bg-secondary/80"}`}>%</button>
+                      </div>
+                    </div>
+                    {propertyTaxMode === "dollar" ? (
+                      <Input type="number" value={propertyTax} onChange={(e) => setPropertyTax(Number(e.target.value))} className="font-body" />
+                    ) : (
+                      <div className="flex items-center gap-2">
+                        <Input type="number" value={propertyTaxPercent} step={0.01} onChange={(e) => { const pct = Number(e.target.value); setPropertyTaxPercent(pct); setPropertyTax(Math.round((pct / 100) * homePrice)); }} className="font-body" />
+                        <span className="font-body text-sm text-muted-foreground whitespace-nowrap">= {formatCurrency(propertyTax)}/yr</span>
+                      </div>
+                    )}
                   </div>
                   <div className="space-y-2">
                     <Label className="font-body text-sm">{t("calculator.annualHomeInsurance")}</Label>
