@@ -1,3 +1,8 @@
+import huttoImg from "@/assets/neighborhoods/hutto.jpg";
+import roundRockImg from "@/assets/neighborhoods/round-rock.jpg";
+import pflugervilleImg from "@/assets/neighborhoods/pflugerville.jpg";
+import taylorImg from "@/assets/neighborhoods/taylor.jpg";
+
 export interface School {
   name: string;
   type: string;
@@ -22,7 +27,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "hutto",
     name: "Hutto",
     city: "Hutto",
-    heroImage: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1920&q=80",
+    heroImage: huttoImg,
     medianPrice: 350000,
     population: "~45,000",
     growth: "+12.5%",
@@ -44,7 +49,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "round-rock",
     name: "Round Rock",
     city: "Round Rock",
-    heroImage: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80",
+    heroImage: roundRockImg,
     medianPrice: 425000,
     population: "~130,000",
     growth: "+8.2%",
@@ -66,7 +71,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "pflugerville",
     name: "Pflugerville",
     city: "Pflugerville",
-    heroImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80",
+    heroImage: pflugervilleImg,
     medianPrice: 400000,
     population: "~75,000",
     growth: "+10.1%",
@@ -88,7 +93,7 @@ export const neighborhoods: Neighborhood[] = [
     slug: "taylor",
     name: "Taylor",
     city: "Taylor",
-    heroImage: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1920&q=80",
+    heroImage: taylorImg,
     medianPrice: 320000,
     population: "~20,000",
     growth: "+15.3%",
