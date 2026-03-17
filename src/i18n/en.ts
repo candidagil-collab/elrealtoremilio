@@ -312,6 +312,20 @@ export const en = {
       lifestyleDesc: "Taylor is experiencing a renaissance fueled by Samsung's massive semiconductor campus and a wave of new development. This historic city offers affordable homes, a revitalized downtown with local restaurants and shops, and a tight-knit community feel. Taylor represents one of the best value opportunities in the Austin metro.",
     },
   },
+  blog: {
+    label: "Blog",
+    title: "Blog",
+    subtitle: "Tips, guides, and market insights to help you make smarter real estate decisions",
+    searchPlaceholder: "Search articles...",
+    allCategories: "All",
+    noPosts: "No articles found.",
+    readMore: "Read more",
+    backToBlog: "Back to Blog",
+    notFound: "Article not found",
+    ctaTitle: "Have Questions About Real Estate?",
+    ctaDesc: "Let's talk about your goals and find the best path forward.",
+    ctaButton: "Talk to an Agent",
+  },
   highlights: {
     hutto: {
       samsung: "Minutes from Samsung's $17B semiconductor campus",

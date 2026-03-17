@@ -1,6 +1,7 @@
-interface SchemaMarkupProps {
-  type: "RealEstateAgent" | "Person" | "FAQPage";
+export interface SchemaMarkupProps {
+  type?: "RealEstateAgent" | "Person" | "FAQPage";
   data?: Record<string, unknown>;
+  schema?: Record<string, unknown>;
 }
 
 const realEstateAgentSchema = {
@@ -40,21 +41,25 @@ const personSchema = {
   areaServed: "Austin, TX",
 };
 
-const SchemaMarkup = ({ type, data }: SchemaMarkupProps) => {
+const SchemaMarkup = ({ type, data, schema: schemaProp }: SchemaMarkupProps) => {
   let schema: Record<string, unknown>;
 
-  switch (type) {
-    case "RealEstateAgent":
-      schema = realEstateAgentSchema;
-      break;
-    case "Person":
-      schema = personSchema;
-      break;
-    case "FAQPage":
-      schema = data || {};
-      break;
-    default:
-      return null;
+  if (schemaProp) {
+    schema = schemaProp;
+  } else {
+    switch (type) {
+      case "RealEstateAgent":
+        schema = realEstateAgentSchema;
+        break;
+      case "Person":
+        schema = personSchema;
+        break;
+      case "FAQPage":
+        schema = data || {};
+        break;
+      default:
+        return null;
+    }
   }
 
   return (
