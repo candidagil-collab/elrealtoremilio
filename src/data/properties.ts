@@ -73,6 +73,18 @@ import tayloeHouseBackyard4 from "@/assets/tayloe-house/backyard-4.jpg";
 import tayloeHouseBackyard5 from "@/assets/tayloe-house/backyard-5.jpg";
 import tayloeHouseSideYard from "@/assets/tayloe-house/side-yard.jpg";
 
+// Michael Ln photos
+import michaelLnAerial1 from "@/assets/michael-ln/aerial-1.jpg";
+import michaelLnAerial2 from "@/assets/michael-ln/aerial-2.jpg";
+import michaelLnAerial3 from "@/assets/michael-ln/aerial-3.jpg";
+import michaelLnGround1 from "@/assets/michael-ln/ground-1.jpg";
+import michaelLnGround2 from "@/assets/michael-ln/ground-2.jpg";
+import michaelLnGround3 from "@/assets/michael-ln/ground-3.jpg";
+import michaelLnGround4 from "@/assets/michael-ln/ground-4.jpg";
+import michaelLnGround5 from "@/assets/michael-ln/ground-5.jpg";
+import michaelLnGround6 from "@/assets/michael-ln/ground-6.jpg";
+import michaelLnGround7 from "@/assets/michael-ln/ground-7.jpg";
+
 export interface Property {
   id: number;
   slug: string;
@@ -98,9 +110,12 @@ export interface Property {
   exterior?: Record<string, string>;
   rentPrice?: number;
   lotSqft?: number;
+  marketValue?: number;
 }
 
+// Order: For Sale first, For Rent second, Sold last
 export const properties: Property[] = [
+  // === FOR SALE ===
   {
     id: 1,
     slug: "116-pine-point-cv",
@@ -241,6 +256,21 @@ export const properties: Property[] = [
     },
   },
   {
+    id: 3,
+    slug: "3-9-acres-synergy-dr",
+    image: propertySynergyDr,
+    images: [propertySynergyDr],
+    title: "3.9 Acres Synergy Dr",
+    description: "Experience the allure of Texas countryside living with this remarkable 3.91-acre parcel nestled in the heart of Bastrop.",
+    bedrooms: null,
+    bathrooms: null,
+    location: "Bastrop, TX",
+    size: "3.91 acres",
+    status: "For Sale",
+    highlights: ["3.91 Acres", "Texas Countryside", "Heart of Bastrop", "Development Ready"],
+  },
+  // === FOR RENT ===
+  {
     id: 2,
     slug: "104-greinert-dr",
     image: propertyGreinertDr,
@@ -274,6 +304,7 @@ export const properties: Property[] = [
     bathrooms: "2.5",
     location: "Taylor, TX 76574",
     sqft: 1880,
+    lotSqft: 3781,
     rentPrice: 1890,
     yearBuilt: 2025,
     propertyType: "Residential Lease - Single Family",
@@ -306,32 +337,41 @@ export const properties: Property[] = [
       "Exterior Features": "Gutters Partial, Private Yard",
     },
   },
-  {
-    id: 3,
-    slug: "3-9-acres-synergy-dr",
-    image: propertySynergyDr,
-    images: [propertySynergyDr],
-    title: "3.9 Acres Synergy Dr",
-    description: "Experience the allure of Texas countryside living with this remarkable 3.91-acre parcel nestled in the heart of Bastrop.",
-    bedrooms: null,
-    bathrooms: null,
-    location: "Bastrop, TX",
-    size: "3.91 acres",
-    status: "For Sale",
-    highlights: ["3.91 Acres", "Texas Countryside", "Heart of Bastrop", "Development Ready"],
-  },
+  // === SOLD / NOT FOR SALE ===
   {
     id: 4,
     slug: "105-michael-ln",
     image: propertyMichaelLn,
-    images: [propertyMichaelLn],
+    images: [
+      propertyMichaelLn,
+      michaelLnAerial1,
+      michaelLnAerial2,
+      michaelLnAerial3,
+      michaelLnGround1,
+      michaelLnGround2,
+      michaelLnGround3,
+      michaelLnGround4,
+      michaelLnGround5,
+      michaelLnGround6,
+      michaelLnGround7,
+    ],
     title: "105 Michael Ln",
-    description: "105 Michael Ln (currently not for sale) is located in Frame Switch subdivision in Williamson County.",
+    description: "105 Michael Ln (currently not for sale) is located in Frame Switch subdivision in Williamson County. 1.55-acre lot with a 2025 market value of $187,976 per Appraisal District.",
+    fullDescription: "105 Michael Ln (currently not for sale) is located in Frame Switch subdivision in Williamson County. Scroll to see the property features, tax value, mortgage calculator, nearby schools and similar homes for sale. The property information herein and below is from the county appraisal district and should be independently verified.",
     bedrooms: null,
     bathrooms: null,
-    location: "Williamson County, TX",
+    location: "Taylor, TX 76574",
+    lotSqft: 67518,
+    lotAcres: 1.55,
+    marketValue: 187976,
+    propertyType: "Land",
     status: "Sold",
-    highlights: ["Frame Switch Subdivision", "Williamson County"],
+    highlights: [
+      "Frame Switch Subdivision",
+      "Williamson County",
+      "1.55 Acres",
+      "2025 Market Value: $187,976",
+    ],
   },
   {
     id: 5,
