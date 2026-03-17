@@ -2,6 +2,7 @@ export const en = {
   navbar: {
     home: "Home",
     properties: "Properties",
+    neighborhoods: "Neighborhoods",
     calculator: "Calculator",
     about: "About",
     cta: "Talk to an Agent",
