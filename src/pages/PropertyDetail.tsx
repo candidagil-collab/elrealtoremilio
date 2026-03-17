@@ -10,6 +10,12 @@ import { useState, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { z } from "zod";
+
+const propertyContactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100),
+  phone: z.string().trim().min(7, "Please enter a valid phone number").max(20),
+});
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 import PropertySchemaMarkup from "@/components/PropertySchemaMarkup";
 
@@ -58,15 +64,16 @@ const PropertyDetail = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !phone.trim()) {
-      toast({ title: t("contactDialog.validationError"), description: "Please enter your name and phone number.", variant: "destructive" });
+    const result = propertyContactSchema.safeParse({ name, phone });
+    if (!result.success) {
+      toast({ title: t("contactDialog.validationError"), description: result.error.errors[0].message, variant: "destructive" });
       return;
     }
     setSending(true);
     try {
       const { error } = await supabase.from("contact_submissions").insert({
-        name: name.trim(),
-        phone: phone.trim(),
+        name: result.data.name,
+        phone: result.data.phone,
         message: `Interested in property: ${property.title} (${property.location})`,
       });
       if (error) throw error;

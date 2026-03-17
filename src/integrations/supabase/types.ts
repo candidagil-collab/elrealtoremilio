@@ -14,6 +14,86 @@ export type Database = {
   }
   public: {
     Tables: {
+      blog_categories: {
+        Row: {
+          created_at: string | null
+          id: string
+          name: string
+          name_es: string
+          slug: string
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          name: string
+          name_es: string
+          slug: string
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          name?: string
+          name_es?: string
+          slug?: string
+        }
+        Relationships: []
+      }
+      blog_posts: {
+        Row: {
+          category_id: string | null
+          content: string
+          content_es: string
+          created_at: string | null
+          excerpt: string
+          excerpt_es: string
+          id: string
+          image_url: string | null
+          published: boolean
+          slug: string
+          title: string
+          title_es: string
+          updated_at: string | null
+        }
+        Insert: {
+          category_id?: string | null
+          content?: string
+          content_es?: string
+          created_at?: string | null
+          excerpt?: string
+          excerpt_es?: string
+          id?: string
+          image_url?: string | null
+          published?: boolean
+          slug: string
+          title: string
+          title_es: string
+          updated_at?: string | null
+        }
+        Update: {
+          category_id?: string | null
+          content?: string
+          content_es?: string
+          created_at?: string | null
+          excerpt?: string
+          excerpt_es?: string
+          id?: string
+          image_url?: string | null
+          published?: boolean
+          slug?: string
+          title?: string
+          title_es?: string
+          updated_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "blog_posts_category_id_fkey"
+            columns: ["category_id"]
+            isOneToOne: false
+            referencedRelation: "blog_categories"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       contact_submissions: {
         Row: {
           created_at: string | null
@@ -64,14 +144,7 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      check_rate_limit: {
-        Args: {
-          max_count?: number
-          table_name: string
-          window_minutes?: number
-        }
-        Returns: boolean
-      }
+      [_ in never]: never
     }
     Enums: {
       [_ in never]: never
