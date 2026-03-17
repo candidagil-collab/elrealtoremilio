@@ -3,6 +3,7 @@ import propertyGreinertDr from "@/assets/property-greinert-dr.jpeg";
 import propertySynergyDr from "@/assets/property-synergy-dr.jpeg";
 import propertyMichaelLn from "@/assets/property-michael-ln.jpeg";
 import propertyKailynneCt from "@/assets/property-kailynne-ct.jpeg";
+import propertyDesperadoLoop from "@/assets/property-desperado-loop.jpg";
 
 // Greinert Dr photos
 import greinertDrLivingKitchen from "@/assets/greinert-dr/living-kitchen.jpg";
