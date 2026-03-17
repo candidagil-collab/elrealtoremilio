@@ -52,7 +52,7 @@ const MortgageCalculator = () => {
     } else {
       monthlyPrincipalInterest = loanAmount / numPayments;
     }
-    const monthlyTax = propertyTax / 12;
+    const monthlyTax = effectivePropertyTax / 12;
     const monthlyInsurance = homeInsurance / 12;
     const monthlyHoa = hoaFees;
     const totalMonthly = monthlyPrincipalInterest + monthlyTax + monthlyInsurance + monthlyHoa;
