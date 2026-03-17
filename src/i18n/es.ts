@@ -4,6 +4,7 @@ export const es: Translations = {
   navbar: {
     home: "Inicio",
     properties: "Propiedades",
+    neighborhoods: "Vecindarios",
     calculator: "Calculadora",
     about: "Nosotros",
     cta: "Habla con un Agente",
