@@ -64,15 +64,16 @@ const PropertyDetail = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!name.trim() || !phone.trim()) {
-      toast({ title: t("contactDialog.validationError"), description: "Please enter your name and phone number.", variant: "destructive" });
+    const result = propertyContactSchema.safeParse({ name, phone });
+    if (!result.success) {
+      toast({ title: t("contactDialog.validationError"), description: result.error.errors[0].message, variant: "destructive" });
       return;
     }
     setSending(true);
     try {
       const { error } = await supabase.from("contact_submissions").insert({
-        name: name.trim(),
-        phone: phone.trim(),
+        name: result.data.name,
+        phone: result.data.phone,
         message: `Interested in property: ${property.title} (${property.location})`,
       });
       if (error) throw error;
