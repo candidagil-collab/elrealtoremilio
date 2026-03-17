@@ -387,6 +387,29 @@ export const properties: Property[] = [
     status: "Sold",
     highlights: ["Country Meadows Estates", "Milam County"],
   },
+  {
+    id: 7,
+    slug: "104-desperado-loop",
+    image: propertyDesperadoLoop,
+    images: [propertyDesperadoLoop],
+    title: "104 Desperado Loop",
+    description: "104 Desperado Loop (currently not for sale) is located in Twin Creeks subdivision in Bastrop County. 0.75-acre lot with a 2025 market value of $87,614 per Appraisal District.",
+    fullDescription: "104 Desperado Loop (currently not for sale) is located in Twin Creeks subdivision in Bastrop County. Scroll to see the property features, tax value, mortgage calculator, nearby schools and similar homes for sale. The property information herein and below is from the county appraisal district and should be independently verified.",
+    bedrooms: null,
+    bathrooms: null,
+    location: "Del Valle, TX 78617",
+    lotSqft: 32670,
+    lotAcres: 0.75,
+    marketValue: 87614,
+    propertyType: "Single-Family",
+    status: "Sold",
+    highlights: [
+      "Twin Creeks Subdivision",
+      "Bastrop County",
+      "0.75 Acres",
+      "Estimated Value: $476,100",
+    ],
+  },
 ];
 
 export const getPropertyBySlug = (slug: string) => properties.find((p) => p.slug === slug);
