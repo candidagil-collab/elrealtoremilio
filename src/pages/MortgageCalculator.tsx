@@ -69,7 +69,7 @@ const MortgageCalculator = () => {
     const firstInterest = schedule.length > 0 ? schedule[0].interest : 0;
     const firstPrincipal = schedule.length > 0 ? schedule[0].principal : 0;
     return { monthlyPrincipalInterest, monthlyTax, monthlyInsurance, monthlyHoa, totalMonthly, totalInterest, schedule, firstPrincipal, firstInterest };
-  }, [loanAmount, interestRate, loanTerm, propertyTax, homeInsurance, hoaFees]);
+  }, [loanAmount, interestRate, loanTerm, effectivePropertyTax, homeInsurance, hoaFees]);
 
   const pieData = [
     { name: t("calculator.principal"), value: calculations.firstPrincipal, color: COLORS.principal },
