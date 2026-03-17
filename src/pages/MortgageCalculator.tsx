@@ -31,6 +31,8 @@ const MortgageCalculator = () => {
   const [interestRate, setInterestRate] = useState(6.5);
   const [loanTerm, setLoanTerm] = useState(30);
   const [propertyTax, setPropertyTax] = useState(4200);
+  const [propertyTaxMode, setPropertyTaxMode] = useState<"dollar" | "percent">("dollar");
+  const [propertyTaxPercent, setPropertyTaxPercent] = useState(1.2);
   const [homeInsurance, setHomeInsurance] = useState(1800);
   const [hoaFees, setHoaFees] = useState(0);
   const [showAmortization, setShowAmortization] = useState(false);
