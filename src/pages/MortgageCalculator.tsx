@@ -40,6 +40,9 @@ const MortgageCalculator = () => {
   const downPayment = (homePrice * downPaymentPercent) / 100;
   const loanAmount = homePrice - downPayment;
 
+  // Sync property tax when home price changes in percent mode
+  const effectivePropertyTax = propertyTaxMode === "percent" ? Math.round((propertyTaxPercent / 100) * homePrice) : propertyTax;
+
   const calculations = useMemo(() => {
     const monthlyRate = interestRate / 100 / 12;
     const numPayments = loanTerm * 12;
