@@ -4,6 +4,18 @@ import propertySynergyDr from "@/assets/property-synergy-dr.jpeg";
 import propertyMichaelLn from "@/assets/property-michael-ln.jpeg";
 import propertyKailynneCt from "@/assets/property-kailynne-ct.jpeg";
 
+// Greinert Dr photos
+import greinertDrLivingKitchen from "@/assets/greinert-dr/living-kitchen.jpg";
+import greinertDrKitchen from "@/assets/greinert-dr/kitchen.jpg";
+import greinertDrHallway from "@/assets/greinert-dr/hallway.jpg";
+import greinertDrPantry from "@/assets/greinert-dr/pantry.jpg";
+import greinertDrHalfBath from "@/assets/greinert-dr/half-bath.jpg";
+import greinertDrStaircase from "@/assets/greinert-dr/staircase.jpg";
+import greinertDrUpstairsLanding from "@/assets/greinert-dr/upstairs-landing.jpg";
+import greinertDrLaundry from "@/assets/greinert-dr/laundry.jpg";
+import greinertDrLoft from "@/assets/greinert-dr/loft.jpg";
+import greinertDrBedroom from "@/assets/greinert-dr/bedroom.jpg";
+
 // Pine Point additional photos
 import pinePointHallway from "@/assets/pine-point/hallway.jpg";
 import pinePointLivingRoom from "@/assets/pine-point/living-room.jpg";
@@ -74,6 +86,8 @@ export interface Property {
   highlights?: string[];
   interior?: Record<string, string>;
   exterior?: Record<string, string>;
+  rentPrice?: number;
+  lotSqft?: number;
 }
 
 export const properties: Property[] = [
@@ -220,14 +234,57 @@ export const properties: Property[] = [
     id: 2,
     slug: "104-greinert-dr",
     image: propertyGreinertDr,
-    images: [propertyGreinertDr],
+    images: [
+      propertyGreinertDr,
+      greinertDrLivingKitchen,
+      greinertDrKitchen,
+      greinertDrHallway,
+      greinertDrPantry,
+      greinertDrHalfBath,
+      greinertDrStaircase,
+      greinertDrUpstairsLanding,
+      greinertDrLaundry,
+      greinertDrLoft,
+      greinertDrBedroom,
+    ],
     title: "104 Greinert Dr",
     description: "Brand-new home for rent! Located just 2 minutes from Walmart and H-E-B, less than 10 minutes from the Samsung plant in Taylor, and under 3 minutes from the elementary and middle school.",
+    fullDescription: "Brand-new home for rent! Located just 2 minutes from Walmart and H-E-B, less than 10 minutes from the Samsung plant in Taylor, and under 3 minutes from the elementary and middle school. An excellent option if you're looking for location, comfort, and a completely new home. Refrigerator included. Laundry room available; washer and dryer not included. Contact me for more information or to schedule your visit. Qualification criteria include income to be at least 3x the rent, credit score to be 600+ without any collection, conviction and good rental history. Approved tenants must provide proof of renter's insurance with standard liability coverage prior to move-in and maintain it throughout the lease.",
     bedrooms: 3,
     bathrooms: "2.5",
-    location: "Taylor, TX",
+    location: "Taylor, TX 76574",
+    sqft: 1880,
+    rentPrice: 1890,
+    yearBuilt: 2025,
+    propertyType: "Residential Lease - Single Family",
     status: "For Rent",
-    highlights: ["Brand New Construction", "2 min from Walmart & H-E-B", "Near Samsung Plant", "Close to Schools"],
+    highlights: [
+      "Brand New Construction 2025",
+      "2 min from Walmart & H-E-B",
+      "Near Samsung Plant",
+      "Close to Schools",
+      "Pets Allowed",
+      "2-Car Garage",
+    ],
+    interior: {
+      "Living Areas": "2",
+      "Dining Areas": "1",
+      "Stories": "2",
+      "Floors": "Carpet, Tile, Vinyl",
+      "Cooling": "Ceiling Fan(s), Central Air, Gas",
+      "Appliances": "Disposal, ENERGY STAR Dishwasher, ENERGY STAR Refrigerator, Microwave, Gas Oven, Plumbed For Ice Maker",
+      "Security": "Carbon Monoxide Detector(s), Smoke Detector(s)",
+      "Interior Features": "Ceiling Fan(s), Double Vanity, Kitchen Island, Open Floorplan, Pantry, Walk-In Closet(s)",
+    },
+    exterior: {
+      "Private Pool": "No",
+      "Lot Description": "Landscaped, Sprinkler - Rain Sensor",
+      "Parking": "Concrete, Driveway, Garage, Garage Door Opener",
+      "Parking Space": "Garage 2 / Parking 4",
+      "Utility": "Cable Available, Electricity Connected, Internet-Cable, Natural Gas Connected, Sewer Available, Underground Utilities, Water Available",
+      "Front Door Face": "East",
+      "Exterior Features": "Gutters Partial, Private Yard",
+    },
   },
   {
     id: 3,

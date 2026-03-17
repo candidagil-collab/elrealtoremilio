@@ -152,6 +152,9 @@ const PropertyDetail = () => {
                 {property.price && (
                   <p className="font-display text-3xl md:text-4xl font-bold text-primary">{formatPrice(property.price)}</p>
                 )}
+                {!property.price && property.rentPrice && (
+                  <p className="font-display text-3xl md:text-4xl font-bold text-primary">${property.rentPrice.toLocaleString()}/mo</p>
+                )}
               </div>
 
               {/* Key Stats */}
