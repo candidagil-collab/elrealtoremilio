@@ -10,6 +10,12 @@ import { useState, useCallback } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { z } from "zod";
+
+const propertyContactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100),
+  phone: z.string().trim().min(7, "Please enter a valid phone number").max(20),
+});
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 import PropertySchemaMarkup from "@/components/PropertySchemaMarkup";
 
