@@ -15,6 +15,9 @@ import TermsConditions from "./pages/TermsConditions";
 import CookiePolicy from "./pages/CookiePolicy";
 import Neighborhoods from "./pages/Neighborhoods";
 import NeighborhoodDetail from "./pages/NeighborhoodDetail";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import BlogAdmin from "./pages/BlogAdmin";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
