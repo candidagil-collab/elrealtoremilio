@@ -76,9 +76,9 @@ const Hero = () => {
                       <h3 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium mb-3">{property.title}</h3>
                       <p className="font-body text-sm md:text-base text-white/80 mb-4 line-clamp-2 max-w-xl">{property.description}</p>
                       <div className="flex items-center gap-4">
-                        {property.price && (
+                        {(property.price || property.rentPrice) && (
                           <span className="font-display text-xl md:text-2xl font-bold text-white">
-                            ${property.price.toLocaleString()}
+                            {property.price ? `$${property.price.toLocaleString()}` : `$${property.rentPrice?.toLocaleString()}/mo`}
                           </span>
                         )}
                         {property.bedrooms && property.bathrooms && (

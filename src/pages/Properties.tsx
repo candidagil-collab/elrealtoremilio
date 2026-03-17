@@ -77,10 +77,10 @@ const PropertyCard = ({ property, index }: PropertyCardProps) => {
                 </Badge>
               </div>
             )}
-            {property.price && (
+            {(property.price || property.rentPrice) && (
               <div className="absolute bottom-4 left-4">
                 <span className="font-display text-2xl font-bold text-white drop-shadow-lg">
-                  ${property.price.toLocaleString()}
+                  {property.price ? `$${property.price.toLocaleString()}` : `$${property.rentPrice?.toLocaleString()}/mo`}
                 </span>
               </div>
             )}
