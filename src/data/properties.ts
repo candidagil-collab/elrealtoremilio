@@ -97,6 +97,16 @@ import synergyDrLand7 from "@/assets/synergy-dr/land-7.jpg";
 import synergyDrLand8 from "@/assets/synergy-dr/land-8.jpg";
 import synergyDrLand9 from "@/assets/synergy-dr/land-9.jpg";
 import synergyDrLand10 from "@/assets/synergy-dr/land-10.jpg";
+import synergyDrStructure1 from "@/assets/synergy-dr/structure-1.jpg";
+import synergyDrStructure2 from "@/assets/synergy-dr/structure-2.jpg";
+import synergyDrArea1 from "@/assets/synergy-dr/area-1.jpg";
+import synergyDrArea2 from "@/assets/synergy-dr/area-2.jpg";
+import synergyDrArea3 from "@/assets/synergy-dr/area-3.jpg";
+import synergyDrArea4 from "@/assets/synergy-dr/area-4.jpg";
+import synergyDrArea5 from "@/assets/synergy-dr/area-5.jpg";
+import synergyDrArea6 from "@/assets/synergy-dr/area-6.jpg";
+import synergyDrArea7 from "@/assets/synergy-dr/area-7.jpg";
+import synergyDrArea8 from "@/assets/synergy-dr/area-8.jpg";
 
 export interface Property {
   id: number;
